@@ -9,7 +9,6 @@
 [Chen Yang](https://scholar.google.com/citations?user=C6fAQeIAAAAJ&hl)<sup>2</sup>, [Yixuan Yuan](https://www.ee.cuhk.edu.hk/en-gb/people/academic-staff/professors/prof-yixuan-yuan)<sup>1✉</sup> -->
 
 <sup>1</sup>CUHK EE &emsp; <sup>2</sup>MIT CSAIL &emsp; <sup>3</sup>CAS CAIR &emsp; <sup>4</sup>Shanghai AI Lab &emsp;
-
 <sup>\*</sup> Equal Contributions. <sup>✉</sup> Corresponding Author. 
 
 -------------------------------------------
@@ -200,6 +199,8 @@ Please follow the steps:
 Please follow the steps:
 1. Run COLMAP on the generated videos as the point initialization.
 2. Use [EndoGaussian](TBD) to train 3D representation of Gaussian Splatting.
+
+Videos of Rendered RGB & Rendered Depth
 
 <div align=center>
 <img src="./assets/mot.png" width="400">
