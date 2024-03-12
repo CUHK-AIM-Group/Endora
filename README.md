@@ -22,7 +22,7 @@
 - Versatile ability through successful applications in video-based disease diagnosis and 3D surgical scene reconstruction, highlighting its potential for downstream medical tasks
 
 ## Setup
-<!-- ```bash
+```bash
 git clone https://github.com/yifliu3/EndoGaussian.git
 cd EndoGaussian
 git submodule update --init --recursive
@@ -32,10 +32,10 @@ conda activate EndoGaussian
 pip install -r requirements.txt
 pip install -e submodules/depth-diff-gaussian-rasterization
 pip install -e submodules/simple-knn
-``` -->
-'''
-TBD
-'''
+```
+
+
+
 In our environment, we use pytorch=1.13.1, and the CUDA compile version is 11.7.
 It is recommended to use GPU with storage >= TBD for video sampling by Endora inference, and storae >= TBD for Endora training. 
 
@@ -51,10 +51,7 @@ It is recommended to use GPU with storage >= TBD for video sampling by Endora in
 <!-- The dataset provided in [CholecTriplet](https://endovissub2019-scared.grand-challenge.org/) is used. To obtain a link to the data and code release, sign the challenge rules and email them to max.allan@intusurg.com. You will receive a temporary link to download the data and code. -->
 <!-- Follow [MICCAI_challenge_preprocess](https://github.com/EikoLoki/MICCAI_challenge_preprocess) to extract data.  -->
 The resulted file structure is as follows.
-'''
-TBD
-'''
-<!-- ```
+```
 ├── data
 │   | endonerf 
 │     ├── pulling
@@ -66,7 +63,7 @@ TBD
 │       ├── ...
 │     ├── dataset_2
 |     ├── ...
-``` -->
+```
 
 ## Sampling Endoscopy Videos
 
