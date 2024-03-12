@@ -16,10 +16,10 @@
 ![introduction](assets/teaser.png)
 
 ## Key Features
-- A high-fidelity medical video generation framework, tested on endoscopy scenes, laying the groundwork for further advancements in the field.
-- The first public benchmark for endoscopy video generation, featuring a comprehensive collection of clinical videos and adapting existing general-purpose generative video models for this purpose.
-- A novel technique to infuse generative models with features distilled from a 2D visual foundation model, ensuring consistency and quality across different scales.
-- Versatile ability through successful applications in video-based disease diagnosis and 3D surgical scene reconstruction, highlighting its potential for downstream medical tasks
+- A high-fidelity **medical video generation** framework, tested on endoscopy scenes, laying the groundwork for further advancements in the field.
+- The first public **benchmark for endoscopy video generation**, featuring a comprehensive collection of clinical videos and adapting existing general-purpose generative video models for this purpose.
+- A novel technique to infuse generative models with **features distilled from a 2D visual foundation model**, ensuring consistency and quality across different scales.
+- **Versatile ability through successful applications** in video-based disease diagnosis and 3D surgical scene reconstruction, highlighting its potential for downstream medical tasks
 
 ## Setup
 ```bash
