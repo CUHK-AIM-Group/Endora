@@ -3,7 +3,7 @@
 ### [Project Page](TBD) | [ArXiv Paper](TBD)
 
 
-[Chenxin Li](https://xggnet.github.io/)<sup>1</sup> [Hengyu Liu]()<sup>1*</sup> [Yifan Liu](https://yifliu3.github.io/)<sup>1*</sup> [Brandon Y. Feng](https://brandonyfeng.github.io/)<sup>2*</sup> [Wuyang Li](https://wymancv.github.io/wuyang.github.io/)<sup>1</sup> [Xinyu Liu](https://xinyuliu-jeffrey.github.io/)<sup>1</sup> [Zhen Chen](https://franciszchen.github.io/)<sup>3</sup> [Jing Shao](https://amandajshao.github.io/)<sup>4</sup> [Yixuan Yuan](https://www.ee.cuhk.edu.hk/en-gb/people/academic-staff/professors/prof-yixuan-yuan)<sup>1✉</sup>
+[Chenxin Li](https://xggnet.github.io/)<sup>1*</sup> [Hengyu Liu]()<sup>1*</sup> [Yifan Liu](https://yifliu3.github.io/)<sup>1*</sup> [Brandon Y. Feng](https://brandonyfeng.github.io/)<sup>2</sup> [Wuyang Li](https://wymancv.github.io/wuyang.github.io/)<sup>1</sup> [Xinyu Liu](https://xinyuliu-jeffrey.github.io/)<sup>1</sup> [Zhen Chen](https://franciszchen.github.io/)<sup>3</sup> [Jing Shao](https://amandajshao.github.io/)<sup>4</sup> [Yixuan Yuan](https://www.ee.cuhk.edu.hk/en-gb/people/academic-staff/professors/prof-yixuan-yuan)<sup>1✉</sup>
 <!-- 
 [Yifan Liu](https://yifliu3.github.io/)<sup>1*</sup>, [Chenxin Li](https://xggnet.github.io/)<sup>1*</sup>,
 [Chen Yang](https://scholar.google.com/citations?user=C6fAQeIAAAAJ&hl)<sup>2</sup>, [Yixuan Yuan](https://www.ee.cuhk.edu.hk/en-gb/people/academic-staff/professors/prof-yixuan-yuan)<sup>1✉</sup> -->
