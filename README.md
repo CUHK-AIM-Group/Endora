@@ -172,7 +172,7 @@ torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train
 ```
 |Modified Diffusion| Spatiotemporal Encoding | Prior Guidance | FVD↓ | FID↓ | IS↑ | Checkpoints | Logs
 |-----|------|-----|-----|-----|-----|------|-----|
-|<span style="color:red;">&#x2718;</span>|<span style="color:red;">&#x2718;</span> | <span style="color:red;">&#x2718;</span> | 2110.7 | 226.14 | 2.12| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
+|<span style="color: red;">&#10060;</span>| <span style="color:red;">&#x2718;</span>  | <span style="color:red;">&#x2718;</span> | 2110.7 | 226.14 | 2.12| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
  |&#x2705;|<span style="color:red;">&#x2718;</span> | <span style="color:red;">&#x2718;</span> |1036.7 | 96.85 | 1.93| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
 |&#x2705;|&#x2705;| <span style="color:red;">&#x2718;</span> | 468.5 | 53.17 | 3.37| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
 |&#x2705;|&#x2705;| &#x2705;| 468.5 | 53.17 | 3.37| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
