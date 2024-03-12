@@ -1,271 +1,245 @@
-# Foundation Model for Endoscopy Video Analysis
-<!-- select Model and/or Data and/or Code as needed>
-### Welcome to OpenMEDLab! 👋
+# *Endora*: Video Generation Models as Endoscopy Simulators
 
-<!--
-**Here are some ideas to get you started:**
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+### [Project Page](TBD) | [ArXiv Paper](TBD)
 
 
-<!-- Insert the project banner here -->
+[Chenxin Li](https://xggnet.github.io/)<sup>1</sup> [Hengyu Liu]()<sup>1*</sup> [Yifan Liu](https://yifliu3.github.io/)<sup>1*</sup> [Brandon Y. Feng](https://brandonyfeng.github.io/)<sup>2*</sup> [Wuyang Li](https://wymancv.github.io/wuyang.github.io/)<sup>1</sup> [Xinyu Liu](https://xinyuliu-jeffrey.github.io/)<sup>1</sup> [Zhen Chen](https://franciszchen.github.io/)<sup>3</sup> [Jing Shao](https://amandajshao.github.io/)<sup>4</sup> [Yixuan Yuan](https://www.ee.cuhk.edu.hk/en-gb/people/academic-staff/professors/prof-yixuan-yuan)<sup>1✉</sup>
+<!-- 
+[Yifan Liu](https://yifliu3.github.io/)<sup>1*</sup>, [Chenxin Li](https://xggnet.github.io/)<sup>1*</sup>,
+[Chen Yang](https://scholar.google.com/citations?user=C6fAQeIAAAAJ&hl)<sup>2</sup>, [Yixuan Yuan](https://www.ee.cuhk.edu.hk/en-gb/people/academic-staff/professors/prof-yixuan-yuan)<sup>1✉</sup> -->
 
-[//]: # (<div align="center">)
+<sup>1</sup>CUHK EE &emsp; <sup>2</sup>MIT CSAIL &emsp; <sup>3</sup>CAS CAIR &emsp; <sup>4</sup>Shanghai AI Lab &emsp;
+<!-- <sup>\*</sup> Equal Contributions. <sup>✉</sup> Corresponding Author.  -->
 
-[//]: # (    <a href="https://"><img width="1000px" height="auto" src="https://github.com/openmedlab/sampleProject/blob/main/banner_sample.png"></a>)
-
-[//]: # (</div>)
-
-[//]: # (---)
-
-<!-- Select some of the point info, feel free to delete -->
-
-[//]: # ([![Twitter]&#40;https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Fopendilab&#41;]&#40;https://twitter.com/opendilab&#41;)
-
-[//]: # ([![PyPI]&#40;https://img.shields.io/pypi/v/DI-engine&#41;]&#40;https://pypi.org/project/DI-engine/&#41;)
-
-[//]: # (![Conda]&#40;https://anaconda.org/opendilab/di-engine/badges/version.svg&#41;)
-
-[//]: # (![Conda update]&#40;https://anaconda.org/opendilab/di-engine/badges/latest_release_date.svg&#41;)
-
-[//]: # (![PyPI - Python Version]&#40;https://img.shields.io/pypi/pyversions/DI-engine&#41;)
-
-[//]: # (![PyTorch Version]&#40;https://img.shields.io/badge/dynamic/json?color=blue&label=pytorch&query=%24.pytorchVersion&url=https%3A%2F%2Fgist.githubusercontent.com/PaParaZz1/54c5c44eeb94734e276b2ed5770eba8d/raw/85b94a54933a9369f8843cc2cea3546152a75661/badges.json&#41;)
-
-[//]: # ()
-[//]: # ()
-[//]: # (![Loc]&#40;https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/HansBug/3690cccd811e4c5f771075c2f785c7bb/raw/loc.json&#41;)
-
-[//]: # (![Comments]&#40;https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/HansBug/3690cccd811e4c5f771075c2f785c7bb/raw/comments.json&#41;)
-
-[//]: # ()
-[//]: # (![Style]&#40;https://github.com/opendilab/DI-engine/actions/workflows/style.yml/badge.svg&#41;)
-
-[//]: # (![Docs]&#40;https://github.com/opendilab/DI-engine/actions/workflows/doc.yml/badge.svg&#41;)
-
-[//]: # (![Unittest]&#40;https://github.com/opendilab/DI-engine/actions/workflows/unit_test.yml/badge.svg&#41;)
-
-[//]: # (![Algotest]&#40;https://github.com/opendilab/DI-engine/actions/workflows/algo_test.yml/badge.svg&#41;)
-
-[//]: # (![deploy]&#40;https://github.com/opendilab/DI-engine/actions/workflows/deploy.yml/badge.svg&#41;)
-
-[//]: # ([![codecov]&#40;https://codecov.io/gh/opendilab/DI-engine/branch/main/graph/badge.svg?token=B0Q15JI301&#41;]&#40;https://codecov.io/gh/opendilab/DI-engine&#41;)
-
-[//]: # ()
-[//]: # (![GitHub Org's stars]&#40;https://img.shields.io/github/stars/opendilab&#41;)
-
-[//]: # ([![GitHub stars]&#40;https://img.shields.io/github/stars/opendilab/DI-engine&#41;]&#40;https://github.com/Med-AIR/Endo-FM/stargazers&#41;)
-
-[//]: # ([![GitHub forks]&#40;https://img.shields.io/github/forks/opendilab/DI-engine&#41;]&#40;https://github.com/Med-AIR/Endo-FM/network&#41;)
-
-[//]: # (![GitHub commit activity]&#40;https://img.shields.io/github/commit-activity/m/opendilab/DI-engine&#41;)
-
-[//]: # ([![GitHub issues]&#40;https://img.shields.io/github/issues/opendilab/DI-engine&#41;]&#40;https://github.com/opendilab/DI-engine/issues&#41;)
-
-[//]: # ([![GitHub pulls]&#40;https://img.shields.io/github/issues-pr/opendilab/DI-engine&#41;]&#40;https://github.com/opendilab/DI-engine/pulls&#41;)
-
-[//]: # ([![Contributors]&#40;https://img.shields.io/github/contributors/opendilab/DI-engine&#41;]&#40;https://github.com/opendilab/DI-engine/graphs/contributors&#41;)
-
-[//]: # ([![GitHub license]&#40;https://img.shields.io/github/license/opendilab/DI-engine&#41;]&#40;https://github.com/Med-AIR/Endo-FM/blob/master/LICENSE&#41;)
-
-[//]: # (Updated on 2023.06.09)
-
-
-
-This repository provides the official PyTorch implementation of the paper [**Foundation Model for Endoscopy Video Analysis via Large-scale Self-supervised Pre-train**](https://arxiv.org/abs/2306.16741)
-by [Zhao Wang](https://kyfafyd.wang)\*, [Chang Liu](https://scholar.google.com/citations?user=q2JSP3kAAAAJ)\*, [Shaoting Zhang](http://www.qingyuan.sjtu.edu.cn/a/Shaoting-Zhang.html)†, and [Qi Dou](http://www.cse.cuhk.edu.hk/~qdou)†.
-
-<div align="center">
-    <a href="https://"><img width="800px" height="auto" src="assets/framework.png"></a>
-</div>
+-------------------------------------------
+![introduction](assets/teaser.png)
 
 ## Key Features
+- A high-fidelity medical video generation framework, tested on endoscopy scenes, laying the groundwork for further advancements in the field.
+- The first public benchmark for endoscopy video generation, featuring a comprehensive collection of clinical videos and adapting existing general-purpose generative video models for this purpose.
+- A novel technique to infuse generative models with features distilled from a 2D visual foundation model, ensuring consistency and quality across different scales.
+- Versatile ability through successful applications in video-based disease diagnosis and 3D surgical scene reconstruction, highlighting its potential for downstream medical tasks
+
+## Setup
+<!-- ```bash
+git clone https://github.com/yifliu3/EndoGaussian.git
+cd EndoGaussian
+git submodule update --init --recursive
+conda create -n EndoGaussian python=3.7 
+conda activate EndoGaussian
+
+pip install -r requirements.txt
+pip install -e submodules/depth-diff-gaussian-rasterization
+pip install -e submodules/simple-knn
+``` -->
+'''
+TBD
+'''
+In our environment, we use pytorch=1.13.1, and the CUDA compile version is 11.7.
+It is recommended to use GPU with storage >= TBD for video sampling by Endora inference, and storae >= TBD for Endora training. 
+
+## Data Preparation
+**Colonoscopic**:  The dataset provided by [paper](TBD) can be found [here](TBD). You can directly use the [processed video data]() by *[Endo-FM](TBD)* without further data processing.
+<!-- The dataset provided in [Colonoscopic](https://arxiv.org/abs/2206.15255) is used. You can download and process the dataset from their website (https://github.com/med-air/EndoNeRF). We use the two accessible clips including 'pulling_soft_tissues' and 'cutting_tissues_twice'. -->
+
+**Kvasir-Capsule**:  The dataset provided by [paper](TBD) can be found [here](TBD). You can directly use the [processed video data]() by *[Endo-FM](TBD)* without further data processing.
+<!-- The dataset provided in [Kvasir-Capsule](https://arxiv.org/abs/2206.15255) is used. You can download and process the dataset from their website (https://github.com/med-air/EndoNeRF). We use the two accessible clips including 'pulling_soft_tissues' and 'cutting_tissues_twice'. -->
 
 
-[//]: # (key feature bulletin points here)
-- First foundation model for endoscopy video analysis.
-- A large-scale endoscopic video dataset with over 33K video clips.
-- Support 3 types of downstream tasks, including classification, segmentation, and detection.
+**CholecTriplet**:  The dataset provided by [paper](TBD) can be found [here](TBD). You can directly use the [processed video data]() by *[Endo-FM](TBD)* without further data processing.
+<!-- The dataset provided in [CholecTriplet](https://endovissub2019-scared.grand-challenge.org/) is used. To obtain a link to the data and code release, sign the challenge rules and email them to max.allan@intusurg.com. You will receive a temporary link to download the data and code. -->
+<!-- Follow [MICCAI_challenge_preprocess](https://github.com/EikoLoki/MICCAI_challenge_preprocess) to extract data.  -->
+The resulted file structure is as follows.
+'''
+TBD
+'''
+<!-- ```
+├── data
+│   | endonerf 
+│     ├── pulling
+│     ├── cutting 
+│   | scared
+│     ├── dataset_1
+│       ├── keyframe_1
+│           ├── data
+│       ├── ...
+│     ├── dataset_2
+|     ├── ...
+``` -->
 
-## Links
+## Sampling Endoscopy Videos
 
-- [Paper](https://arxiv.org/abs/2306.16741)
-- [Model](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/EZh5mWE5CL1BpaJ1bXuokfYBDM2VaMknqG7YpaQBRgAvdQ?e=e2rVYW)
-- [OpenMEDLab Page](https://github.com/openmedlab/Endo-FM) 
-<!-- [Code] may link to your project at your institute>
+You can directly sample the endoscopy videos from the checkpoint model. Here is an example for quick usage for using our **pre-trained models**:
+1. Download the pre-trained weights from [here](TBD) and put them to TBD.
+2. Run [`sample.py`](sample/sample.py) by the following scripts to customize the various arguments like adjusting sampling steps. 
+<!-- with [`sample.py`](sample/sample.py). Weights for our pre-trained Latte model can be found [here](https://huggingface.co/maxin-cn/Latte).  
+The script has various arguments to adjust sampling steps. -->
+ <!-- change the classifier-free guidance scale, etc. For example, to sample from our model on FaceForensics, you can use: -->
+
+```bash
+bash sample/ffs.sh
+```
+<!-- or if you want to sample hundreds of videos, you can use the following script with Pytorch DDP:
+
+```bash
+bash sample/ffs_ddp.sh
+``` -->
+
+<!-- If you want to try generating videos from text, please download [`t2v_required_models`](https://huggingface.co/maxin-cn/Latte/tree/main/t2v_required_models) and run `bash sample/t2v.sh`. -->
 
 
-<!-- give a introduction of your project -->
+## Training Endora
+Train Endora with the resolution of 128x128 with `N` GPUs on the Colonoscopic dataset
+```bash
+torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml
+```
+<!-- We provide the scripts [`train_endora.py`](train_with_img.py).  -->
+<!-- Similar to [`train.py`](train.py) scripts, this scripts can be also used to train class-conditional and unconditional
+Latte models. For example, if you wan to train Latte model on the FaceForensics dataset, you can use -->
+<!-- We provide a training script for Latte in [`train.py`](train.py). This script can be used to train class-conditional and unconditional
+Latte models. To launch Latte (256x256) training with `N` GPUs on the FaceForensics dataset: -->
+<!-- 
+```bash
+torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml
+``` -->
+<!-- or If you have a cluster that uses slurm, you can also train Latte's model using the following scripts:
 
-## Details
+ ```bash
+sbatch slurm_scripts/ffs.slurm
+``` -->
 
-> Foundation models have exhibited remarkable success in various applications, such as disease diagnosis and text report generation. To date, a foundation model for endoscopic video analysis is still lacking. In this paper, we propose Endo-FM, a foundation model specifically developed using massive endoscopic video data. First, we build a video transformer, which captures both local and global long-range dependencies across spatial and temporal dimensions. Second, we pre-train our transformer model using global and local views via a self-supervised manner, aiming to make it robust to spatial-temporal variations and discriminative across different scenes. To develop the foundation model, we construct a large-scale endoscopy video dataset by combining 9 publicly available datasets and a privately collected dataset from Baoshan Branch of Renji Hospital in Shanghai, China. Our dataset overall consists of over 33K video clips with up to 5 million frames, encompassing various protocols, target organs, and disease types. Our pre-trained Endo-FM can be easily adopted for a given downtream task via fine-tuning by serving as the backbone. With experiments on 3 different types of downstream tasks, including classification, segmentation, and detection, our Endo-FM surpasses the current state-of-the-art self-supervised pre-training and adapter-based transfer learning methods by a significant margin.
+<!-- We also provide the video-image joint training scripts [`train_with_img.py`](train_with_img.py). Similar to [`train.py`](train.py) scripts, this scripts can be also used to train class-conditional and unconditional
+Latte models. For example, if you wan to train Latte model on the FaceForensics dataset, you can use:
 
-<!-- Insert a pipeline of your algorithm here if got one -->
+```bash
+torchrun --nnodes=1 --nproc_per_node=N train_with_img.py --config ./configs/ffs/ffs_img_train.yaml
+``` -->
+<!-- 
+For training video generation on, run 
+``` 
+python train.py -s data/endonerf/pulling --port 6017 --expname endonerf/pulling --configs arguments/endonerf/pulling.py 
+``` 
+You can customize your training config through the config files.
+ -->
+
+## Metric Evaluation
+You can use the following script to evaluate the model in terms of FVD, FID and IS.  
+```
+python metrics.py --model_path output/endonerf/pulling
+```
+## Running Previous Methods Re-implemented on Endoscopy
+We provide the training of other methods on endoscopy video generation (as shown in Table 1. Quantitative Comparison in paper)
+```bash
+torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %StyleGAN-V
+torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %LVDM
+torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %MoStGAN-V
+```
+
+The testing scripts:
+```bash
+torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %StyleGAN-V
+torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %LVDM
+torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %MoStGAN-V
+```
+
+The pre-trained weights for all the comparison methods are avaliable [here](TBD).
+
+Here is an overview of performance&checkpoints&logs on Colonoscopic Dataset.
+|Method| FVD↓ | FID↓ | IS↑ | Checkpoints | Logs
+|-----|------|-----|-----|-----|-----|
+|StyleGAN-V| 2110.7 | 226.14 | 2.12| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
+|LVDM| 1036.7 | 96.85 | 1.93| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
+|MoStGAN-V| 468.5 | 53.17 | 3.37| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
+|Endora (Ours)| 460.7 | 13.41 | 3.90| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
+
+<!-- - What are contained in the checkpoints:
+
+```
+**.pth
+├── model: state dictionaries of the model
+├── flop: a list containing the GFLOPs corresponding to exiting at each stage
+├── anytime_classification: Top-1 accuracy of each stage
+├── budgeted_batch_classification: results of budgeted batch classification (a two-item list, [0] and [1] correspond to the two coordinates of a curve)
+
+``` -->
 
 
-[//]: # (More intro text here.)
+
+## Ablation on Endora's Variants
+We also provide the training of other variants of Endora (as shown in Table 3. Ablation Studies in paper)
+```bash
+torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %Plain Model
+torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %Modified Diffusion
+torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %Modified Diffusion + ST Encoding
+```
+|Modified Diffusion| Spatiotemporal Encoding | Prior Guidance | FVD↓ | FID↓ | IS↑ | Checkpoints | Logs
+|-----|------|-----|-----|-----|-----|------|-----|
+|<span style="color:red;">&#x2718;</span>|<span style="color:red;">&#x2718;</span> | <span style="color:red;">&#x2718;</span> | 2110.7 | 226.14 | 2.12| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
+ |&#x2705;|<span style="color:red;">&#x2718;</span> | <span style="color:red;">&#x2718;</span> |1036.7 | 96.85 | 1.93| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
+|&#x2705;|&#x2705;| <span style="color:red;">&#x2718;</span> | 468.5 | 53.17 | 3.37| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
+|&#x2705;|&#x2705;| &#x2705;| 468.5 | 53.17 | 3.37| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
 
 
-## Datasets
 
-<div align="center">
-    <a href="https://"><img width="800px" height="auto" src="assets/dataset_details.png"></a>
+## Downstream Application
+We provide the reproduction steps for reproducing the results of extending Endora to downstream applications (as shown in Section 3.3 in paper).
+### Case I. Temporal-consistent Data Augmentation
+Please follow the steps:
+1. Download **PolypDiag** dataset provided by [paper](TBD) from [here](TBD). You can directly use the [processed video data]() by *[Endo-FM](TBD)* without further data processing.
+2. Run the script ```python semi_fixmatch.py``` to obtain the Supervised-only lowerbound of semi-supervised disease diagnosis.
+3. Sample the endoscopy videos on **Colonoscopic** and **CholecTriplet** as augmented data. We also provide the sampled videos [here](TBD) for direct usage.
+4. Run the script ```python semi_fixmatch.py``` for semi-supervised disease diagnosis using the augmented unlabeled data.
+   
+
+|Method|Colonoscopic |CholeTriplet |
+|-----|------|-----|
+|Supervised-only| 74.5 / [Ckpts](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing) / [Logs](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing) | 74.5 / [Ckpts](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing) / [Logs](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing) 
+|LVDM | 76.2 / [Ckpts](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing) / [Logs](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing) | 78.0 /  [Ckpts](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing) / [Logs](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
+|Endora (Ours)| 87.0/ [Ckpts](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing) / [Logs](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)| 82.0 /  [Ckpts](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing) / [Logs](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
+
+
+### Case II. View-consistent Scene Simulator
+Please follow the steps:
+1. Run COLMAP on the generated videos as the point initialization.
+2. Use [EndoGaussian](TBD) to train 3D representation of Gaussian Splatting.
+
+<div align=center>
+<img src="./assets/mot.png" width="400">
 </div>
 
-<div align="center">
-    <a href="https://"><img width="800px" height="auto" src="assets/dataset_visualization.png"></a>
-</div>
+<!-- ## Rendering & Reconstruction(optional)
+Run the following script to render the images.  
 
-We utilize 6 public and 1 private datasets for pre-training and 3 datasets as the downstream tasks.
-Except for SUN & SUN-SEG, we provide our preprocessed data for pre-training and downstream tasks.
-
-#### Pre-training Data (6 public + 1 private) 
-- Colonoscopic [[original paper]](https://ieeexplore.ieee.org/abstract/document/7442848) [[original dataset]](http://www.depeca.uah.es/colonoscopy_dataset/)  [[our preprocessed dataset]](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/ES_hCHb2XWFJgsK4hrKUnNUBx3fl6QI3yyk9ImP4AkkRVw?e=LC4DU5)
-- SUN & SUN-SEG [[original paper1]](https://www.sciencedirect.com/science/article/pii/S0016510720346551) [[original paper2]](https://link.springer.com/article/10.1007/s11633-022-1371-y) [[original dataset1]](http://amed8k.sundatabase.org/) [[original dataset2]](https://github.com/GewelsJI/VPS/blob/main/docs/DATA_PREPARATION.md)
-- LPPolypVideo [[original paper]](https://link.springer.com/chapter/10.1007/978-3-030-87240-3_37) [[original dataset]](https://github.com/dashishi/LDPolypVideo-Benchmark) [[our preprocessed dataset]](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/ERTYntGNWfZKj8FVjzsK0QEB6W6KoiuiP89Y3on1PJBAmg?e=P24jjG)
-- Hyper-Kvasir [[original paper]](https://www.nature.com/articles/s41597-020-00622-y) [[original dataset]](https://datasets.simula.no/hyper-kvasir/) [[our preprocessed dataset]](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/EeHnnUmGbmBGlw7UlNVvw2wBzBMzKi8Sus5LrdwrQi-XUA?e=gWr5qH)
-- Kvasir-Capsule [[original paper]](https://www.nature.com/articles/s41597-021-00920-z) [[original dataset]](https://datasets.simula.no/kvasir-capsule/) [[our preprocessed dataset]](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/EQhyk3_yz5pAtdpKVFU93S0BfPfTNpblPFXTHaW-BIjV-Q?e=9duP5z)
-- CholecTriplet [[original paper]](https://www.sciencedirect.com/science/article/pii/S1361841522000846) [[original dataset]](https://cholectriplet2021.grand-challenge.org/) [[our preprocessed dataset]](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/Ea6g5KpHaJNLvYFqoZpHeroBS801guoB16X18F4GfEG4pw?e=SWHoyQ)
-- Our Private [[our preprocessed dataset]](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/EZ2Vs0zU-L1Go8RITgs42b4BjlWy6UtGXh6AHmBGD_gGFw?e=SRiD7m)
-
-#### Downstream Data (3 public)
-- PolypDiag [[original paper]](https://link.springer.com/chapter/10.1007/978-3-031-16437-8_9) [[original dataset]](https://github.com/tianyu0207/weakly-polyp) [[our preprocessed dataset]](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/Ed_RCZ86IktKkGNNL5qX9IsBvNa7wcyM8q4yBQBkzaBj8g?e=pvuZVt)
-- CVC-12k [[original paper]](https://www.sciencedirect.com/science/article/pii/S0895611115000567) [[original dataset]](https://polyp.grand-challenge.org/Databases/) [[our preprocessed dataset]](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/EQzj78YsrVZAtbNVHW7WPEEBX1AeolLI7gmBkg-iEg1lQg?e=0gQPzy)
-- KUMC [[original paper]](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0255809) [[original dataset]](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FCBUOR) [[our preprocessed dataset]](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/EQHKl1-MgA5Ams_sQ4_ssg8BFyd66qucAxUTEHz4lHxE7g?e=fFtXzd)
-
-
-For SUN & SUN-SEG, you need first request the original videos following [this instruction](https://github.com/GewelsJI/VPS/blob/main/docs/DATA_PREPARATION.md).
-Then, you can transfer the data for pre-training videos by the following:
-```bash
-cd Endo-FM/data
-python sun.py
-python sun_seg.py
-python trans_videos_pretrain.py
 ```
-Finally, generating the video list `pretrain/train.csv` for pre-training by the following:
-```bash
-cd Endo-FM/data
-python gencsv.py
+python render.py --model_path output/endonerf/pulling  --skip_train --skip_video --configs arguments/endonerf/pulling.py
 ```
+You can use `--skip_train`, `--skip_test`, and `--skip_video` to skip rendering images of training, testing, and video set. By default, all three sets are rendered.
 
+Besides, we also provide point cloud reconstruction function, you can add extra arguments `--reconstruct` to activate it. -->
 
-## Get Started
+<!-- ## Evaluation
+You can just run the following script to evaluate the model.  
 
-#### Main Requirements
-- torch==1.8.0
-- torchvision==0.9.0
-- pillow==6.2.2
-- timm==0.4.12
-
-#### Installation
-We suggest using Anaconda to setup environment on Linux, if you have installed anaconda, you can skip this step.
-
-```shell
-wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh && zsh Anaconda3-2020.11-Linux-x86_64.sh
 ```
+python metrics.py --model_path output/endonerf/pulling
+``` -->
 
-Then, we can install packages using provided `environment.yaml`.
+## TODO List
+- [ ]
 
-```shell
-cd Endo-FM
-conda env create -f environment.yaml
-conda activate endofm
+## Acknowledgements
+Greatly appreciate the tremendous effort for the following projects!
+- [Endo-FM](https://github.com/openmedlab/Endo-FM)
+- [Latte](https://github.com/Vchitect/Latte)
+- [EndoGaussian](https://github.com/yifliu3/EndoGaussian)
+- [FixMatch]()
+
+<!-- Some source code of ours is borrowed from [3DGS](https://github.com/graphdeco-inria/gaussian-splatting), [4DGS](https://github.com/hustvl/4DGaussians), and [EndoNeRF](https://github.com/med-air/EndoNeRF). Thanks for their contributions.  -->
+
+## Citation
+If you find this work helpful for your project,please consider citing the following paper:
 ```
-
-#### Pre-trained Weights
-You can directly download our pre-trained Endo-FM via this [link](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/EZh5mWE5CL1BpaJ1bXuokfYBDM2VaMknqG7YpaQBRgAvdQ?e=e2rVYW) and put it under `checkpoints/` for downstream fine-tuning.
-
-#### Downstream Fine-tuned Weights
-Also, we provide the pre-trained weights of 3 downstream tasks for direct downstream testing.
-
-|    Dataset    | PolypDiag | CVC-12k | KUMC | 
-|:--------------:|:----:|:----:|:-----:|
-|    Our Paper   | 90.7 | 73.9 | 84.1 |
-| Released Model | 91.3 | 76.6 | 84.0 |
-| Weights | [link](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/ERSlUP10MGpBuhg1uN5iaHABKqz1SPQSrr03j4sEWey-bw?e=muv8RL) | [link](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/EePnpTllUCFEqpYp6BFPv0sBQyST4CV4jQ8pvaRynCkD7Q?e=f7LeBx) | [link](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/EYPkwbFyMfxEirezWtumAGIBSCTQ0EvDN4u99KKiRsaVBA?e=DsrkVG) |
-
-<!-- [//]: # (#### Preprocess) -->
-
-
-#### Pre-training
-```shell
-cd Endo-FM
-wget -P checkpoints/ https://github.com/kahnchana/svt/releases/download/v1.0/kinetics400_vitb_ssl.pth
-bash scripts/train_clips32k.sh
-```
-
-#### Downstream Fine-tuning
-```shell
-# PolypDiag (Classification)
-cd Endo-FM
-bash scripts/eval_finetune_polypdiag.sh
-
-# CVC (Segmentation)
-cd Endo-FM/TransUNet
-python train.py
-
-# KUMC (Detection)
-cd Endo-FM/STMT
-python setup.py build develop
-python -m torch.distributed.launch \
-    --nproc_per_node=1 \
-    tools/train_net.py \
-    --master_port=$((RANDOM + 10000)) \
-    --config-file configs/STFT/kumc_R_50_STFT.yaml \
-    OUTPUT_DIR log_dir/kumc_finetune
-```
-
-#### Direct Downstream Testing
-```shell
-# PolypDiag (Classification)
-cd Endo-FM
-bash scripts/test_finetune_polypdiag.sh
-
-# CVC (Segmentation)
-cd Endo-FM/TransUNet
-python train.py --test
-
-# KUMC (Detection)
-cd Endo-FM/STMT
-python setup.py build develop
-python -m torch.distributed.launch \
-    --nproc_per_node=1 \
-    tools/test_net.py \
-    --master_port=$((RANDOM + 10000)) \
-    --config-file configs/STFT/kumc_R_50_STFT.yaml \
-    MODEL.WEIGHT kumc.pth \
-    OUTPUT_DIR log_dir/kumc_finetune
-```
-
-## 🙋‍♀️ Feedback and Contact
-
-For further questions, pls feel free to contact [Zhao Wang](mailto:zwang21@cse.cuhk.edu.hk).
-
-
-## 🛡️ License
-
-This project is under the Apache License 2.0 license. See [LICENSE](LICENSE) for details.
-
-## 🙏 Acknowledgement
-
-Our code is based on [DINO](https://github.com/facebookresearch/dino), [TimeSformer](https://github.com/facebookresearch/TimeSformer), [SVT](https://github.com/kahnchana/svt), [TransUNet](https://github.com/Beckschen/TransUNet), and [STFT](https://github.com/lingyunwu14/STFT). Thanks them for releasing their codes.
-
-## 📝 Citation
-
-If you find this code useful, please cite in your research papers.
-```
-@inproceedings{
-    wang2023foundation,
-    title={Foundation Model for Endoscopy Video Analysis via Large-scale Self-supervised Pre-train},
-    author={Zhao Wang and Chang Liu and Shaoting Zhang and Qi Dou},
-    booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
-    pages={101--111},
-    year={2023},
-    organization={Springer}
+@misc{
+      TBD
 }
 ```
