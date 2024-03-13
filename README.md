@@ -1,4 +1,4 @@
-# *Endora*: Video Generation Models as Endoscopy Simulators
+# <img src="./assets/avatar.png" alt="" width="30" height="30"> *Endora*: Video Generation Models as Endoscopy Simulators
 
 ### [Project Page](TBD) | [ArXiv Paper](TBD)
 
