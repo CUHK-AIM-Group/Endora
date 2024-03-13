@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SyncDreamer: Generating Multiview-consistent Images from a Single-view Image</title>
+    <title>
+      Endora: Video Generation Models as Endoscopy Simulators
+    </title>
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -21,23 +23,30 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h2>SyncDreamer: Generating Multiview-consistent Images <br> from a Single-view Image
+            <h2><i>Endora</i>:
+              Video Generation Models as
+              Endoscopy Simulators <br>
             </h2>
             <h4 style="color:#5a6268;">Arxiv 2023 </h4>
             <hr>
             <h6>
-                <a href="https://liuyuan-pal.github.io/" target="_blank">Yuan Liu</a><sup>1,2</sup>,
-                <a href="https://clinplayer.github.io/" target="_blank">Cheng Lin</a><sup>2</sup>,
-                <a href="" target="_blank">Zijiao Zeng</a><sup>2</sup>,
-                <a href="https://www.xxlong.site/" target="_blank">Xiaoxiao Long</a><sup>1</sup>,
-                <a href="https://lingjie0206.github.io/" target="_blank">Lingjie Liu</a><sup>3</sup>,
-                <a href="https://homepages.inf.ed.ac.uk/tkomura/" target="_blank">Taku Komura</a><sup>1</sup>,
-                <a href="https://engineering.tamu.edu/cse/profiles/Wang-Wenping.html" target="_blank">Wenping Wang</a><sup>4</sup></h6>
+                <a href="https://liuyuan-pal.github.io/" target="_blank">Chenxin Li</a><sup>1*</sup>,
+                <a href="https://clinplayer.github.io/" target="_blank">Hengyu Liu</a><sup>1*</sup>,
+                <a href="" target="_blank">Yifan Liu</a><sup>1*</sup>,
+                <a href="https://www.xxlong.site/" target="_blank">Brandon Y. Feng</a><sup>2</sup>,
+                <br>
+                <a href="https://lingjie0206.github.io/" target="_blank">Wuyang Li</a><sup>1</sup>,
+                <a href="https://homepages.inf.ed.ac.uk/tkomura/" target="_blank">Xinyu Liu</a><sup>1</sup>,
+                <a href="https://engineering.tamu.edu/cse/profiles/Wang-Wenping.html" target="_blank">Zhen Chen</a><sup>3</sup>
+                <a href="https://engineering.tamu.edu/cse/profiles/Wang-Wenping.html" target="_blank">Jing Shao</a><sup>4</sup>
+                <a href="https://engineering.tamu.edu/cse/profiles/Wang-Wenping.html" target="_blank">Yixuan Yuan</a><sup>1</sup>
+              </h6>
             <p>
-                <sup>1</sup>The University of Hong Kong &nbsp;&nbsp;
-                <sup>2</sup>Tencent Games&nbsp;&nbsp;&nbsp;&nbsp;
-                <sup>3</sup>University of Pennsylvania &nbsp;&nbsp;&nbsp;&nbsp;
-                <sup>4</sup>Texas A&M University
+                <sup>1</sup>The Chinese University of Hong Kong &nbsp;&nbsp;
+                <sup>2</sup>Massachusetts Institute of Technology&nbsp;&nbsp;&nbsp;&nbsp;
+                <br>
+                <sup>3</sup>Centre for Artificial Intelligence and Robotics of Hong Kong &nbsp;&nbsp;&nbsp;&nbsp;
+                <sup>4</sup>Shanghai Artificial Intelligence Laboratory
             </p>
 
             <div class="row justify-content-center">
@@ -55,7 +64,7 @@
               </div>
               <div class="column">
                   <p class="mb-5"><a class="btn btn-large btn-light" href="https://huggingface.co/spaces/liuyuan-pal/SyncDreamer" role="button"  target="_blank">
-                    <i class="fa fa-desktop"></i> Live Demo </a> </p>
+                    <i class="fa fa-desktop"></i> Video </a> </p>
               </div>
             </div>
           </div>
@@ -72,16 +81,33 @@
         <div class="col-12 text-center">
           <h3>Abstract</h3>
             <hr style="margin-top:0px">
-            <h6 style="color:#8899a5"> SyncDreamer is able to directly generate multiview consistent images, which allows 3D reconstruction by NeuS or NeRF without SDS loss. </h6>
+            <h6 style="color:#8899a5"> 
+              <!-- SyncDreamer is able to directly generate multiview consistent images, which allows 3D reconstruction by NeuS or NeRF without SDS loss.  -->
+              TL;DR:<i>Endora</i> enables the <b>high-fidelity medical video generation</b> on endoscopy scenes and demonstrates the <b>versatile ability through successful applications</b> in video-based disease diagnosis and 3D surgical scene reconstruction.
+            </h6>
 
-              <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+              <!-- <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
                   <source src="video/teaser.mp4" type="video/mp4">
-              </video>
+              </video> -->
 
 			        <br>
 
           <p class="text-left">
-            In this paper, we present a novel diffusion model called SyncDreamer that generates multiview-consistent images from a single-view image. Using pretrained large-scale 2D diffusion models, recent work Zero123 demonstrates the ability to generate plausible novel views from a single-view image of an object. However, maintaining consistency in geometry and colors for the generated images remains a challenge. To address this issue, we propose a synchronized multiview diffusion model that models the joint probability distribution of multiview images, enabling the generation of multiview-consistent images in a single reverse process. SyncDreamer synchronizes the intermediate states of all the generated images at every step of the reverse process through a 3D-aware feature attention mechanism that correlates the corresponding features across different views. Experiments show that SyncDreamer generates images with high consistency across different views, thus making it well-suited for various 3D generation tasks such as novel-view-synthesis, text-to-3D, and image-to-3D.
+            <!-- In this paper, we present a novel diffusion model called SyncDreamer that generates multiview-consistent images from a single-view image. Using pretrained large-scale 2D diffusion models, recent work Zero123 demonstrates the ability to generate plausible novel views from a single-view image of an object. However, maintaining consistency in geometry and colors for the generated images remains a challenge. To address this issue, we propose a synchronized multiview diffusion model that models the joint probability distribution of multiview images, enabling the generation of multiview-consistent images in a single reverse process. SyncDreamer synchronizes the intermediate states of all the generated images at every step of the reverse process through a 3D-aware feature attention mechanism that correlates the corresponding features across different views. Experiments show that SyncDreamer generates images with high consistency across different views, thus making it well-suited for various 3D generation tasks such as novel-view-synthesis, text-to-3D, and image-to-3D. -->
+            Generative models hold promise for revolutionizing medical education, robot-assisted surgery, and data augmentation for machine learning. 
+            Despite progress in generating 2D medical images, the complex domain of clinical video generation has largely remained untapped.
+            <br>
+            <br>
+            This paper introduces <i>Endora</i>, an innovative approach to generate medical videos to simulate clinical endoscopy scenes.
+            We present a novel generative model design that integrates a meticulously crafted spatial-temporal video transformer with advanced 2D vision foundation model priors, explicitly modeling spatial-temporal dynamics during video generation. 
+            <br>
+            <br>
+            We also pioneer the first public benchmark for endoscopy simulation with video generation models, adapting existing state-of-the-art methods for this endeavor.
+            <i>Endora</i> demonstrates exceptional visual quality in generating endoscopy videos, surpassing state-of-the-art methods in extensive testing.
+            Moreover, we explore how this endoscopy simulator can empower downstream video analysis tasks and even generate 3D medical scenes with multi-view consistency. 
+            <br>
+            <br>
+            In a nutshell, <i>Endora</i> marks a notable breakthrough in the deployment of generative AI for clinical endoscopy research, setting a substantial stage for further advances in medical content generation.
           </p>
 
           
@@ -90,7 +116,8 @@
         </video>
 
         <p class="text-center">
-          Reverse process of SyncDreamer's multiview diffusion.
+          <!-- Reverse process of SyncDreamer's multiview diffusion. -->
+          Sampled realistic endoscopy videos by <i>Endora</i>. 
         </p>
         </div>
       </div>
@@ -102,7 +129,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-            <h2>Results on the Google Scanned Object dataset</h2>
+            <h2>Results on Colonoscopic Dataset</h2>
             <hr style="margin-top:0px">
             <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
                 <source src="video/gso.mp4" type="video/mp4">
@@ -120,7 +147,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-            <h2>Text to image to 3D model</h2>
+            <h2>Results on Kvasir-Capsule Dataset</h2>
             <hr style="margin-top:0px">
             <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
                 <source src="video/t2i.mp4" type="video/mp4">
@@ -139,7 +166,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-            <h2>2D design to 3D model</h2>
+            <h2>Results on CholecTriplet Dataset</h2>
             <hr style="margin-top:0px">
             <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
                 <source src="video/drawings.mp4" type="video/mp4">
@@ -159,14 +186,15 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-            <h2>Multiple instance generation</h2>
+            <h2><i>Endora</i> as Efficient 3D Creators</h2>
             <hr style="margin-top:0px">
             <video width="80%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
                 <source src="video/multiple.mp4" type="video/mp4">
             </video>
 
           <p class="text-center">
-            Given the same single-view image, SynDreame allows generating different instances using different random seeds.
+            We train a representation of Endoscopy Gaussian Splatting on the sampled videos by <i>Endora</i> and observe the multi-view consistent geometry as if in the real 3D world.
+            <!-- single-view image, SynDreame allows generating different instances using different random seeds. -->
           </p>
         </div>
       </div>
@@ -174,7 +202,7 @@
   </section>
   <br>
 
-  
+<!--   
   <section>
     <div class="container">
       <div class="row">
@@ -192,7 +220,7 @@
       </div>
     </div>
   </section>
-  <br>
+  <br> -->
 
 
   <!-- citing -->
