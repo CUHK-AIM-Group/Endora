@@ -260,27 +260,12 @@ Please follow the steps:
 2. Use [EndoGaussian](https://github.com/yifliu3/EndoGaussian) to train 3D representation of Gaussian Splatting.
 
 Videos of Rendered RGB & Rendered Depth
-<div class="video-container" style="display: flex; justify-content: center;">
-                  <div style="display: flex; align-items: center; width: 160; height:120;">
-                    <!-- <span> StyleGAN </span> -->
-                  </div>
-                  <video class="video" width="160" height="120" autoplay="autoplay" loop="loop" preload="" muted="">
-                      <source src="./assets/videos/1_rgb.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                  </video>
-                  <video class="video" width="160" height="120" autoplay="autoplay" loop="loop" preload="" muted="">
-                      <source src="./assets/videos/1_depth.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                  </video>
-                  <video class="video" width="160" height="120" autoplay="autoplay" loop="loop" preload="" muted="">
-                    <source src="./assets/videos/2_rgb.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                  <video class="video" width="160" height="120" autoplay="autoplay" loop="loop" preload="" muted="">
-                    <source src="./assets/videos/2_depth.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
+<div style="display: flex; justify-content: center;">
+    <video src="./assets/videos/1_rgb.mp4" width="160" height="120" controls></video>
+    <video src="./assets/videos/1_depth.mp4" width="160" height="120" controls></video>
+    <video src="./assets/videos/2_rgb.mp4" width="160" height="120" controls></video>
+    <video src="./assets/videos/2_depth.mp4" width="160" height="120" controls></video>
+</div>
 
 <!-- ## Rendering & Reconstruction(optional)
 Run the following script to render the images.  
