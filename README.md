@@ -45,14 +45,14 @@ In our environment, we use pytorch=2.1.2, and the CUDA compile version is 11.8.
 It is recommended to use GPU with storage $\ge$ 24GB for video sampling by Endora inference, and storae $\ge$ 48GB for Endora training. 
 
 ## Data Preparation
-**Colonoscopic**:  The dataset provided by [paper](TBD) can be found [here](TBD). You can directly use the [processed video data]() by *[Endo-FM](TBD)* without further data processing.
+**Colonoscopic**:  The dataset provided by [paper](https://ieeexplore.ieee.org/abstract/document/7442848) can be found [here](http://www.depeca.uah.es/colonoscopy_dataset/). You can directly use the [processed video data](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/ES_hCHb2XWFJgsK4hrKUnNUBx3fl6QI3yyk9ImP4AkkRVw?e=LC4DU5) by *[Endo-FM](https://github.com/openmedlab/Endo-FM)* without further data processing.
 <!-- The dataset provided in [Colonoscopic](https://arxiv.org/abs/2206.15255) is used. You can download and process the dataset from their website (https://github.com/med-air/EndoNeRF). We use the two accessible clips including 'pulling_soft_tissues' and 'cutting_tissues_twice'. -->
 
-**Kvasir-Capsule**:  The dataset provided by [paper](TBD) can be found [here](TBD). You can directly use the [processed video data]() by *[Endo-FM](TBD)* without further data processing.
+**Kvasir-Capsule**:  The dataset provided by [paper](https://www.nature.com/articles/s41597-021-00920-z) can be found [here](https://datasets.simula.no/kvasir-capsule/). You can directly use the [processed video data](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/EQhyk3_yz5pAtdpKVFU93S0BfPfTNpblPFXTHaW-BIjV-Q?e=9duP5z) by *[Endo-FM](https://github.com/openmedlab/Endo-FM)* without further data processing.
 <!-- The dataset provided in [Kvasir-Capsule](https://arxiv.org/abs/2206.15255) is used. You can download and process the dataset from their website (https://github.com/med-air/EndoNeRF). We use the two accessible clips including 'pulling_soft_tissues' and 'cutting_tissues_twice'. -->
 
 
-**CholecTriplet**:  The dataset provided by [paper](TBD) can be found [here](TBD). You can directly use the [processed video data]() by *[Endo-FM](TBD)* without further data processing.
+**CholecTriplet**:  The dataset provided by [paper](https://www.sciencedirect.com/science/article/pii/S1361841522000846) can be found [here](https://cholectriplet2021.grand-challenge.org/). You can directly use the [processed video data](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/EQhyk3_yz5pAtdpKVFU93S0BfPfTNpblPFXTHaW-BIjV-Q?e=9duP5z) by *[Endo-FM](https://github.com/openmedlab/Endo-FM)* without further data processing.
 <!-- The dataset provided in [CholecTriplet](https://endovissub2019-scared.grand-challenge.org/) is used. To obtain a link to the data and code release, sign the challenge rules and email them to max.allan@intusurg.com. You will receive a temporary link to download the data and code. -->
 <!-- Follow [MICCAI_challenge_preprocess](https://github.com/EikoLoki/MICCAI_challenge_preprocess) to extract data.  -->
 
