@@ -128,7 +128,7 @@ bash sample/ffs_ddp.sh
 
 
 ## Training Endora
-The weight of pretrained DINO can be found here [here](https://github.com/facebookresearch/dino), and in our implementation we use ViT-B/8 during training Endora. And the saved path need to be edited in [`./configs`](./configs/)
+The weight of pretrained DINO can be found [here](https://github.com/facebookresearch/dino), and in our implementation we use ViT-B/8 during training Endora. And the saved path need to be edited in [`./configs`](./configs/)
 
 Train Endora with the resolution of 128x128 with `N` GPUs on the Colonoscopic dataset
 ```bash
@@ -177,8 +177,16 @@ You can customize your training config through the config files.
 ## Metric Evaluation
 We first split the generated videos to frames and use the code from [StyleGAN](https://github.com/universome/stylegan-v) to evaluate the model in terms of FVD, FID and IS.  
 
-
+Test with [`process_data.py`](./process_data.py) and code in [stylegan-v](https://github.com/universome/stylegan-v)
+```bash
+CUDA_VISIBLE_DEVICES=gpu_id python process_data.py -s /path/to/generated/video -t /path/to/video/frames
+cd /path/to/stylegan-v
+CUDA_VISIBLE_DEVICES=gpu_id python ./src/scripts/calc_metrics_for_dataset.py \
+  --fake_data_path /path/to/video/frames \
+  --real_data_path /path/to/dataset/frames 
 ```
+Test with scipt [`test.sh`](./test.sh)
+```bash
 bash test.sh
 ```
 ## Running Previous Methods Re-implemented on Endoscopy
@@ -222,10 +230,8 @@ Here is an overview of performance&checkpoints&logs on Colonoscopic Dataset.
 ## Ablation on Endora's Variants
 We also provide the training of other variants of Endora (as shown in Table 3. Ablation Studies in paper). Training and Sampling Scripts are in [`train_scripts/ablation`](./train_scripts/ablation) and [`sample/ablation`](./sample/ablation) respectively.
 ```bash
-# for training varient i of line i in the table
 bash /train_scripts/ablation/train_col_ablationi.sh
 
-# for ddp sample of varient i of line i in the table
 bash /sample/ablation/col_ddp_ablationi.sh
 ```
 |Modified Diffusion| Spatiotemporal Encoding | Prior Guidance | FVD↓ | FID↓ | IS↑ | Checkpoints | Logs
@@ -290,6 +296,7 @@ Greatly appreciate the tremendous effort for the following projects!
 - [Latte](https://github.com/Vchitect/Latte)
 - [EndoGaussian](https://github.com/yifliu3/EndoGaussian)
 - [CoMatch](https://github.com/salesforce/CoMatch)
+- [Stylegan-v](https://github.com/universome/stylegan-v)
 
 <!-- Some source code of ours is borrowed from [3DGS](https://github.com/graphdeco-inria/gaussian-splatting), [4DGS](https://github.com/hustvl/4DGaussians), and [EndoNeRF](https://github.com/med-air/EndoNeRF). Thanks for their contributions.  -->
 
