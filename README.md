@@ -1,4 +1,5 @@
 # *Endora*: Video Generation Models as Endoscopy Simulators 
+
 <div style="text-align:center;">
     <img src="./assets/avatar.png" alt="" width="120" height="120">
 </div>
