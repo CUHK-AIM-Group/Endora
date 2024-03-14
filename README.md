@@ -99,7 +99,7 @@ The resulted file structure is as follows.
 ## Sampling Endoscopy Videos
 
 You can directly sample the endoscopy videos from the checkpoint model. Here is an example for quick usage for using our **pre-trained models**:
-1. Download the pre-trained weights from [here](TBD) and put them to TBD.
+1. Download the pre-trained weights from [here](https://stuxmueducn-my.sharepoint.com/:f:/g/personal/chenxinli_stu_xmu_edu_cn/EnlDBG3dzwlPnSjqYdpp4l8BfettnJoeX1XVSX_BIVNyHQ?e=W6kXM9) and put them to specific path defined in the configs.
 2. Run [`sample.py`](sample/sample.py) by the following scripts to customize the various arguments like adjusting sampling steps. 
 <!-- with [`sample.py`](sample/sample.py). Weights for our pre-trained Latte model can be found [here](https://huggingface.co/maxin-cn/Latte).  
 The script has various arguments to adjust sampling steps. -->
@@ -188,7 +188,7 @@ Test with scipt [`test.sh`](./test.sh)
 ```bash
 bash test.sh
 ```
-## Running Comparative Methods Re-implemented on Endoscopy
+## Running Compared Methods Re-implemented on Endoscopy
 We provide the training of other methods on endoscopy video generation (as shown in Table 1. Quantitative Comparison in paper)
 ```bash
 torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %StyleGAN-V
@@ -254,9 +254,9 @@ Please follow the steps:
 
 |Method|Colonoscopic |CholeTriplet |
 |-----|------|-----|
-|Supervised-only| 74.5 / [Ckpts](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing) / [Logs](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing) | 74.5 / [Ckpts](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing) / [Logs](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing) 
-|LVDM | 76.2 / [Ckpts](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing) / [Logs](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing) | 78.0 /  [Ckpts](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing) / [Logs](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
-|Endora (Ours)| 87.0/ [Ckpts](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing) / [Logs](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)| 82.0 /  [Ckpts](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing) / [Logs](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
+|Supervised-only | 74.5  | 74.5 |
+|LVDM | 76.2  | 78.0 
+|Endora (Ours)| 87.0 | 82.0 |
 
 
 ### Case II. View-consistent Scene Simulator
@@ -287,7 +287,8 @@ python metrics.py --model_path output/endonerf/pulling
 ``` -->
 
 ## TODO List
-- [ ]
+- [ ] The commands for training compared methods.
+- [ ] Upload the ckpt for compared methods.
 
 ## Acknowledgements
 Greatly appreciate the tremendous effort for the following projects!
