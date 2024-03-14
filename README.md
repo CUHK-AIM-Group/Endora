@@ -1,4 +1,8 @@
-# <img src="./assets/avatar.png" alt="" width="30" height="30"> *Endora*: Video Generation Models as Endoscopy Simulators
+# *Endora*: Video Generation Models as Endoscopy Simulators 
+<div style="text-align:center;">
+    <img src="./assets/avatar.png" alt="" width="120" height="120">
+</div>
+
 
 ### [Project Page](TBD) | [ArXiv Paper](TBD)
 
@@ -23,8 +27,6 @@
 
 ## Setup
 
-
-We test our code on CUDA 11.8 with pytorch 2.1.2.
 ```bash
 git clone https://github.com/XGGNet/Endora.git
 cd Endora
@@ -38,8 +40,8 @@ pip install -r requirements.txt
 
 
 
-In our environment, we use pytorch=1.13.1, and the CUDA compile version is 11.7.
-It is recommended to use GPU with storage >= TBD for video sampling by Endora inference, and storae >= TBD for Endora training. 
+In our environment, we use pytorch=2.1.2, and the CUDA compile version is 11.8.
+It is recommended to use GPU with storage $\ge$ 24GB for video sampling by Endora inference, and storae $\ge$ 48GB for Endora training. 
 
 ## Data Preparation
 **Colonoscopic**:  The dataset provided by [paper](TBD) can be found [here](TBD). You can directly use the [processed video data]() by *[Endo-FM](TBD)* without further data processing.
@@ -52,28 +54,48 @@ It is recommended to use GPU with storage >= TBD for video sampling by Endora in
 **CholecTriplet**:  The dataset provided by [paper](TBD) can be found [here](TBD). You can directly use the [processed video data]() by *[Endo-FM](TBD)* without further data processing.
 <!-- The dataset provided in [CholecTriplet](https://endovissub2019-scared.grand-challenge.org/) is used. To obtain a link to the data and code release, sign the challenge rules and email them to max.allan@intusurg.com. You will receive a temporary link to download the data and code. -->
 <!-- Follow [MICCAI_challenge_preprocess](https://github.com/EikoLoki/MICCAI_challenge_preprocess) to extract data.  -->
-The resulted file structure is as follows.
-```
-├── data
-│   | CholecT45
-│     ├── 00001.mp4
-│     ├── 00002.mp4
-|     ├──  ...
-│   | Colonoscopic
-│     ├── 00001.mp4
-│     ├── 00002.mp4
-|     ├──  ...
-│   | Kvasir-Capsule
-│     ├── 00001.mp4
-│     ├── 00002.mp4
-|     ├──  ...
-```
+
 Run [`process_data.py`](process_data.py) and [`process_list.py`](process_list.py) to get the splited frames and the corresponding list for modified diffusion.
 ```bash
 CUDA_VISIBLE_DEVICES=$gpu_id python process_data.py -s /path/to/datasets -t /path/to/save/video/frames
 
 CUDA_VISIBLE_DEVICES=$gpu_id python process_list.py -f /path/to/video/frames -t /path/to/save/text
 ```
+
+The resulted file structure is as follows.
+```
+├── data
+│   ├── CholecT45
+│     ├── 00001.mp4
+|     ├──  ...
+│   ├── Colonoscopic
+│     ├── 00001.mp4
+|     ├──  ...
+│   ├── Kvasir-Capsule
+│     ├── 00001.mp4
+|     ├──  ...
+│   ├── CholecT45_frames
+│     ├── train_128_list.txt
+│     ├── 00001 
+│           ├── 00000.jpg
+|           ├── ...
+|     ├──  ...
+│   ├── Colonoscopic_frames
+│     ├── train_128_list.txt
+│     ├── 00001
+│           ├── 00000.jpg
+|           ├── ...
+|     ├──  ...
+│   ├── Kvasir-Capsule_frames
+│     ├── train_128_list.txt
+│     ├── 00001
+│           ├── 00000.jpg
+|           ├── ...
+|     ├──  ...
+```
+
+
+
 ## Sampling Endoscopy Videos
 
 You can directly sample the endoscopy videos from the checkpoint model. Here is an example for quick usage for using our **pre-trained models**:
@@ -105,9 +127,22 @@ bash sample/ffs_ddp.sh
 
 
 ## Training Endora
+The weight of pretrained DINO can be found here [here](https://github.com/facebookresearch/dino), and in our implementation we use ViT-B/8 during training Endora. And the saved path need to be edited in [./configs](./configs/)
+
 Train Endora with the resolution of 128x128 with `N` GPUs on the Colonoscopic dataset
 ```bash
-torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml
+torchrun --nnodes=1 --nproc_per_node=N train.py \
+  --config ./configs/col/col_train.yaml \
+  --port PORT \
+  --mode type_cnn \
+  --prr_weight 0.5 \
+  --pretrained_weights /path/to/pretrained/DINO
+```
+Run traing Endora with scripts in [./train_scripts](./train_scripts/)
+```bash
+bash train_scripts/col/train_col.sh
+bash train_scripts/kva/train_kva.sh
+bash train_scripts/cho/train_cho.sh
 ```
 <!-- We provide the scripts [`train_endora.py`](train_with_img.py).  -->
 <!-- Similar to [`train.py`](train.py) scripts, this scripts can be also used to train class-conditional and unconditional
@@ -139,9 +174,11 @@ You can customize your training config through the config files.
  -->
 
 ## Metric Evaluation
-You can use the following script to evaluate the model in terms of FVD, FID and IS.  
+We first split the generated videos to frames and use the code from [StyleGAN](https://github.com/universome/stylegan-v) to evaluate the model in terms of FVD, FID and IS.  
+
+
 ```
-python metrics.py --model_path output/endonerf/pulling
+bash test.sh
 ```
 ## Running Previous Methods Re-implemented on Endoscopy
 We provide the training of other methods on endoscopy video generation (as shown in Table 1. Quantitative Comparison in paper)
@@ -182,11 +219,13 @@ Here is an overview of performance&checkpoints&logs on Colonoscopic Dataset.
 
 
 ## Ablation on Endora's Variants
-We also provide the training of other variants of Endora (as shown in Table 3. Ablation Studies in paper)
+We also provide the training of other variants of Endora (as shown in Table 3. Ablation Studies in paper). Training and Sampling Scripts are in [train_scripts/ablation](./train_scripts/ablation) and [sample/ablation](./sample/ablation) respectively.
 ```bash
-torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %Plain Model
-torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %Modified Diffusion
-torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %Modified Diffusion + ST Encoding
+# for training varient i of line i in the table
+bash /train_scripts/ablation/train_col_ablationi.sh
+
+# for ddp sample of varient i of line i in the table
+bash /sample/ablation/col_ddp_ablationi.sh
 ```
 |Modified Diffusion| Spatiotemporal Encoding | Prior Guidance | FVD↓ | FID↓ | IS↑ | Checkpoints | Logs
 |-----|------|-----|-----|-----|-----|------|-----|
@@ -216,14 +255,31 @@ Please follow the steps:
 
 ### Case II. View-consistent Scene Simulator
 Please follow the steps:
-1. Run COLMAP on the generated videos as the point initialization.
-2. Use [EndoGaussian](TBD) to train 3D representation of Gaussian Splatting.
+1. Run [COLMAP](https://github.com/colmap/colmap) on the generated videos as the point initialization.
+2. Use [EndoGaussian](https://github.com/yifliu3/EndoGaussian) to train 3D representation of Gaussian Splatting.
 
 Videos of Rendered RGB & Rendered Depth
-
-<div align=center>
-<img src="./assets/mot.png" width="400">
-</div>
+<div class="video-container" style="display: flex; justify-content: center;">
+                  <div style="display: flex; align-items: center; width: 160; height:120;">
+                    <!-- <span> StyleGAN </span> -->
+                  </div>
+                  <video class="video" width="160" height="120" autoplay="autoplay" loop="loop" preload="" muted="">
+                      <source src="assets/videos/1_rgb.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+                  <video class="video" width="160" height="120" autoplay="autoplay" loop="loop" preload="" muted="">
+                      <source src="assets/videos/1_depth.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+                  <video class="video" width="160" height="120" autoplay="autoplay" loop="loop" preload="" muted="">
+                    <source src="assets/videos/2_rgb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <video class="video" width="160" height="120" autoplay="autoplay" loop="loop" preload="" muted="">
+                    <source src="assets/videos/2_depth.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
 
 <!-- ## Rendering & Reconstruction(optional)
 Run the following script to render the images.  
