@@ -58,9 +58,9 @@ It is recommended to use GPU with storage $\ge$ 24GB for video sampling by Endor
 
 Run [`process_data.py`](process_data.py) and [`process_list.py`](process_list.py) to get the splited frames and the corresponding list for modified diffusion.
 ```bash
-CUDA_VISIBLE_DEVICES=$gpu_id python process_data.py -s /path/to/datasets -t /path/to/save/video/frames
+CUDA_VISIBLE_DEVICES=gpu_id python process_data.py -s /path/to/datasets -t /path/to/save/video/frames
 
-CUDA_VISIBLE_DEVICES=$gpu_id python process_list.py -f /path/to/video/frames -t /path/to/save/text
+CUDA_VISIBLE_DEVICES=gpu_id python process_list.py -f /path/to/video/frames -t /path/to/save/text
 ```
 
 The resulted file structure is as follows.
@@ -128,7 +128,7 @@ bash sample/ffs_ddp.sh
 
 
 ## Training Endora
-The weight of pretrained DINO can be found here [here](https://github.com/facebookresearch/dino), and in our implementation we use ViT-B/8 during training Endora. And the saved path need to be edited in [./configs](./configs/)
+The weight of pretrained DINO can be found here [here](https://github.com/facebookresearch/dino), and in our implementation we use ViT-B/8 during training Endora. And the saved path need to be edited in [`./configs`](./configs/)
 
 Train Endora with the resolution of 128x128 with `N` GPUs on the Colonoscopic dataset
 ```bash
@@ -139,7 +139,7 @@ torchrun --nnodes=1 --nproc_per_node=N train.py \
   --prr_weight 0.5 \
   --pretrained_weights /path/to/pretrained/DINO
 ```
-Run traing Endora with scripts in [./train_scripts](./train_scripts/)
+Run training Endora with scripts in [`./train_scripts`](./train_scripts/)
 ```bash
 bash train_scripts/col/train_col.sh
 bash train_scripts/kva/train_kva.sh
@@ -220,7 +220,7 @@ Here is an overview of performance&checkpoints&logs on Colonoscopic Dataset.
 
 
 ## Ablation on Endora's Variants
-We also provide the training of other variants of Endora (as shown in Table 3. Ablation Studies in paper). Training and Sampling Scripts are in [train_scripts/ablation](./train_scripts/ablation) and [sample/ablation](./sample/ablation) respectively.
+We also provide the training of other variants of Endora (as shown in Table 3. Ablation Studies in paper). Training and Sampling Scripts are in [`train_scripts/ablation`](./train_scripts/ablation) and [`sample/ablation`](./sample/ablation) respectively.
 ```bash
 # for training varient i of line i in the table
 bash /train_scripts/ablation/train_col_ablationi.sh
