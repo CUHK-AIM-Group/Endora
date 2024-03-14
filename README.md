@@ -260,12 +260,9 @@ Please follow the steps:
 2. Use [EndoGaussian](https://github.com/yifliu3/EndoGaussian) to train 3D representation of Gaussian Splatting.
 
 Videos of Rendered RGB & Rendered Depth
-<div style="display: flex; justify-content: center;">
-    <video src="./assets/videos/1_rgb.mp4" width="160" height="120" controls></video>
-    <video src="./assets/videos/1_depth.mp4" width="160" height="120" controls></video>
-    <video src="./assets/videos/2_rgb.mp4" width="160" height="120" controls></video>
-    <video src="./assets/videos/2_depth.mp4" width="160" height="120" controls></video>
-</div>
+<p align="center">
+  <img src="./assets/rec_res.jpg" alt="" width="3600" height="200">
+</p>
 
 <!-- ## Rendering & Reconstruction(optional)
 Run the following script to render the images.  
