@@ -22,16 +22,18 @@
 - **Versatile ability through successful applications** in video-based disease diagnosis and 3D surgical scene reconstruction, highlighting its potential for downstream medical tasks
 
 ## Setup
+
+
+We test our code on CUDA 11.8 with pytorch 2.1.2.
 ```bash
-git clone https://github.com/yifliu3/EndoGaussian.git
-cd EndoGaussian
-git submodule update --init --recursive
-conda create -n EndoGaussian python=3.7 
-conda activate EndoGaussian
+git clone https://github.com/XGGNet/Endora.git
+cd Endora
+conda create -n Endora python=3.10
+conda activate Endora
+
+pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu118
 
 pip install -r requirements.txt
-pip install -e submodules/depth-diff-gaussian-rasterization
-pip install -e submodules/simple-knn
 ```
 
 
@@ -53,18 +55,25 @@ It is recommended to use GPU with storage >= TBD for video sampling by Endora in
 The resulted file structure is as follows.
 ```
 ├── data
-│   | endonerf 
-│     ├── pulling
-│     ├── cutting 
-│   | scared
-│     ├── dataset_1
-│       ├── keyframe_1
-│           ├── data
-│       ├── ...
-│     ├── dataset_2
-|     ├── ...
+│   | CholecT45
+│     ├── 00001.mp4
+│     ├── 00002.mp4
+|     ├──  ...
+│   | Colonoscopic
+│     ├── 00001.mp4
+│     ├── 00002.mp4
+|     ├──  ...
+│   | Kvasir-Capsule
+│     ├── 00001.mp4
+│     ├── 00002.mp4
+|     ├──  ...
 ```
+Run [`process_data.py`](process_data.py) and [`process_list.py`](process_list.py) to get the splited frames and the corresponding list for modified diffusion.
+```bash
+CUDA_VISIBLE_DEVICES=$gpu_id python process_data.py -s /path/to/datasets -t /path/to/save/video/frames
 
+CUDA_VISIBLE_DEVICES=$gpu_id python process_list.py -f /path/to/video/frames -t /path/to/save/text
+```
 ## Sampling Endoscopy Videos
 
 You can directly sample the endoscopy videos from the checkpoint model. Here is an example for quick usage for using our **pre-trained models**:
@@ -73,10 +82,19 @@ You can directly sample the endoscopy videos from the checkpoint model. Here is 
 <!-- with [`sample.py`](sample/sample.py). Weights for our pre-trained Latte model can be found [here](https://huggingface.co/maxin-cn/Latte).  
 The script has various arguments to adjust sampling steps. -->
  <!-- change the classifier-free guidance scale, etc. For example, to sample from our model on FaceForensics, you can use: -->
-
+Simple Sample to generate a video
 ```bash
-bash sample/ffs.sh
+bash sample/col.sh
+bash sample/kva.sh
+bash sample/cho.sh
 ```
+DDP sample
+```bash
+bash sample/col_ddp.sh
+bash sample/kva_ddp.sh
+bash sample/cho_ddp.sh
+```
+
 <!-- or if you want to sample hundreds of videos, you can use the following script with Pytorch DDP:
 
 ```bash

@@ -1,8 +1,7 @@
 import os
 from tqdm import tqdm
+import argparse
 
-ffs_image_root = '/data1/tempt01/code/data/Kvasir-Capsule_frames'
-ffs_image_txt = '/data1/tempt01/code/data/Kvasir-Capsule_frames/train_128_list.txt'
 
 def get_filelist(file_path):
     Filelist = []
@@ -12,12 +11,22 @@ def get_filelist(file_path):
             # Filelist.append(filename)
     return Filelist
 
-ffs_files = get_filelist(ffs_image_root)
 
-for i in tqdm(ffs_files):
-    relative_path = i.split(ffs_image_root)[-1]
-    with open(ffs_image_txt, 'a+') as f:
-        # f.writelines(relative_path + '\n')
-        f.writelines(i + "\n")
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Get the corresponding file')
+    parser.add_argument('-f', '--frames_dir', type=str, default="", help='Path to the video frames')
+    parser.add_argument('-t', '--text_dir', type=str, default="", help='Where to save corresponding text')
+    args = parser.parse_args()
 
-# CUDA_VISIBLE_DEVICES=4 python process_list.py
+    image_root_path = args.frames_dir
+    image_txt_path = args.text_dir
+
+
+
+    files_list = get_filelist(image_root_path)
+
+    for i in tqdm(files_list):
+        relative_path = i.split(image_root_path)[-1]
+        with open(image_txt_path, 'a+') as f:
+            f.writelines(i + "\n")
+
