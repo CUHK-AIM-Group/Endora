@@ -39,10 +39,9 @@ pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https
 pip install -r requirements.txt
 ```
 
+Tips A: We test the framework using pytorch=2.1.2, and the CUDA compile version=11.8. Other versions should be fine most of the time but not ensured.
 
-
-In our environment, we use pytorch=2.1.2, and the CUDA compile version is 11.8.
-It is recommended to use GPU with storage $\ge$ 24GB for video sampling by Endora inference, and storae $\ge$ 48GB for Endora training. 
+Tips B: GPU with 24GB (or more) is recommanded for video sampling by Endora inference, and 48GB (or more) for Endora training. 
 
 ## Data Preparation
 **Colonoscopic**:  The dataset provided by [paper](TBD) can be found [here](TBD). You can directly use the [processed video data]() by *[Endo-FM](TBD)* without further data processing.
@@ -189,7 +188,7 @@ Test with scipt [`test.sh`](./test.sh)
 ```bash
 bash test.sh
 ```
-## Running Previous Methods Re-implemented on Endoscopy
+## Running Comparative Methods Re-implemented on Endoscopy
 We provide the training of other methods on endoscopy video generation (as shown in Table 1. Quantitative Comparison in paper)
 ```bash
 torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %StyleGAN-V
@@ -207,10 +206,10 @@ torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train
 The pre-trained weights for all the comparison methods are avaliable [here](TBD).
 
 Here is an overview of performance&checkpoints&logs on Colonoscopic Dataset.
-|Method| FVD↓ | FID↓ | IS↑ | Checkpoints | Logs
-|-----|------|-----|-----|-----|-----|
-|StyleGAN-V| 2110.7 | 226.14 | 2.12| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
-|LVDM| 1036.7 | 96.85 | 1.93| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
+|Method| FVD↓ | FID↓ | IS↑ | Checkpoints |
+|-----|------|-----|-----|-----|
+|StyleGAN-V| 2110.7 | 226.14 | 2.12| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|
+|LVDM| 1036.7 | 96.85 | 1.93| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|
 |MoStGAN-V| 468.5 | 53.17 | 3.37| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
 |Endora (Ours)| 460.7 | 13.41 | 3.90| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
 
