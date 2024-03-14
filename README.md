@@ -265,19 +265,19 @@ Videos of Rendered RGB & Rendered Depth
                     <!-- <span> StyleGAN </span> -->
                   </div>
                   <video class="video" width="160" height="120" autoplay="autoplay" loop="loop" preload="" muted="">
-                      <source src="assets/videos/1_rgb.mp4" type="video/mp4">
+                      <source src="./assets/videos/1_rgb.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                   </video>
                   <video class="video" width="160" height="120" autoplay="autoplay" loop="loop" preload="" muted="">
-                      <source src="assets/videos/1_depth.mp4" type="video/mp4">
+                      <source src="./assets/videos/1_depth.mp4" type="video/mp4">
                       Your browser does not support the video tag.
                   </video>
                   <video class="video" width="160" height="120" autoplay="autoplay" loop="loop" preload="" muted="">
-                    <source src="assets/videos/2_rgb.mp4" type="video/mp4">
+                    <source src="./assets/videos/2_rgb.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
                   <video class="video" width="160" height="120" autoplay="autoplay" loop="loop" preload="" muted="">
-                    <source src="assets/videos/2_depth.mp4" type="video/mp4">
+                    <source src="./assets/videos/2_depth.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
                 </div>
