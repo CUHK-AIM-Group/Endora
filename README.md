@@ -261,7 +261,7 @@ Please follow the steps:
 
 Videos of Rendered RGB & Rendered Depth
 <p align="center">
-  <img src="./assets/rec_res.jpg" alt="" width="3600" height="200">
+  <img src="./assets/rec_res.jpg" alt="">
 </p>
 
 <!-- ## Rendering & Reconstruction(optional)
