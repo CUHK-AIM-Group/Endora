@@ -20,7 +20,7 @@
 <sup>\*</sup> Equal Contributions. <sup>✉</sup> Corresponding Author. 
 
 -------------------------------------------
-![introduction](assets/teaser.png)
+![introduction](assets/ppline_new.png)
 
 ## 💡Key Features
 - A high-fidelity **medical video generation** framework, tested on endoscopy scenes, laying the groundwork for further advancements in the field.
