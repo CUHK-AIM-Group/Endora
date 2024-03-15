@@ -290,6 +290,8 @@ python metrics.py --model_path output/endonerf/pulling
 ``` -->
 
 ## 🛒TODO List
+- [X] Release code for Endora
+- [X] Clean up the code for Endora
 - [X] Upload the ckpt for compared methods.
 - [ ] Clean up the codes for training compared methods.
 
