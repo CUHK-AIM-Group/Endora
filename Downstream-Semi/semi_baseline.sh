@@ -3,7 +3,7 @@ DATASET="ucf101"
 DATA_PATH="data/downstream/PolypDiag" # input the PolypDiag dataset path
 
 
-CUDA_VISIBLE_DEVICES=1 python eval_semi_baseline.py \
+CUDA_VISIBLE_DEVICES=1 python train_semi_baseline.py \
   --n_last_blocks 1 \
   --arch "vit_base" \
   --epochs 20 \

@@ -4,7 +4,7 @@ DATA_PATH="data/downstream/PolypDiag" # input the PolypDiag dataset path
 GEN_DATA_PATH="data/unlabeled/endora_colon" # input the path to the generated videos 
 
 
-CUDA_VISIBLE_DEVICES=1 python eval_semi.py \
+CUDA_VISIBLE_DEVICES=1 python train_semi_gen.py \
   --n_last_blocks 1 \
   --arch "vit_base" \
   --epochs 20 \

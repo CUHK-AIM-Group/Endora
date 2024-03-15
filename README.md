@@ -189,7 +189,10 @@ Test with scipt [`test.sh`](./test.sh)
 bash test.sh
 ```
 ## ⏳Running Compared Methods Re-implemented on Endoscopy
-We provide the training of other methods on endoscopy video generation (as shown in Table 1. Quantitative Comparison in paper)
+We provide the code of training and testing scripts of compared methods on endoscopy video generation (as shown in Table 1. Quantitative Comparison in paper).
+Please enter [Other-Methods/](https://github.com/XGGNet/Endora/tree/main/Other-Methods) for more details. We will keep cleaning up the code.
+
+<!-- 
 ```bash
 torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %StyleGAN-V
 torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %LVDM
@@ -201,9 +204,9 @@ The testing scripts:
 torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %StyleGAN-V
 torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %LVDM
 torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %MoStGAN-V
-```
+``` -->
 
-The pre-trained weights for all the comparison methods are avaliable [here](TBD).
+The pre-trained weights for all the comparison methods are available [here](https://stuxmueducn-my.sharepoint.com/:f:/g/personal/chenxinli_stu_xmu_edu_cn/EhoRsCt9tetAso44IFivC-EBcmt1UR_Zz0zmmwzI09tB9w?e=5QAuo6).
 
 Here is an overview of performance&checkpoints on Colonoscopic Dataset.
 |Method| FVD↓ | FID↓ | IS↑ | Checkpoints |
@@ -247,9 +250,9 @@ We provide the reproduction steps for reproducing the results of extending Endor
 Please follow the steps:
 1. Enter the path "Downstream-Semi/"
 1. Download **PolypDiag** dataset provided by [paper](https://link.springer.com/chapter/10.1007/978-3-031-16437-8_9) from [here](https://github.com/tianyu0207/weakly-polyp). You can directly use the [processed video data](https://mycuhk-my.sharepoint.com/personal/1155167044_link_cuhk_edu_hk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2F1155167044%5Flink%5Fcuhk%5Fedu%5Fhk%2FDocuments%2FEndo%2DFM%2Fdata%2Fdownstream%2FPolypDiag%2Etar&parent=%2Fpersonal%2F1155167044%5Flink%5Fcuhk%5Fedu%5Fhk%2FDocuments%2FEndo%2DFM%2Fdata%2Fdownstream&ga=1) by [Endo-FM](https://github.com/med-air/Endo-FM) without further data processing.
-2. Run the script ```python semi_fixmatch.py``` to obtain the Supervised-only lowerbound of semi-supervised disease diagnosis.
-3. Sample the endoscopy videos on **Colonoscopic** and **CholecTriplet** as augmented data. We also provide the sampled videos [here]() for direct usage.
-4. Run the script ```python semi_fixmatch.py``` for semi-supervised disease diagnosis using the augmented unlabeled data.
+2. Run the script ```bash semi_baseline.sh``` to obtain the Supervised-only lowerbound of semi-supervised disease diagnosis.
+3. Sample the endoscopy videos on **Colonoscopic** and **CholecTriplet** as augmented data. We also provide the sampled videos [here](https://stuxmueducn-my.sharepoint.com/:f:/g/personal/chenxinli_stu_xmu_edu_cn/EldIvXX8XolMiNIA3aILL4EB60tPreDrAW-SrcnuespmFg?e=loZIln) for direct usage.
+4. Run the script ```bash semi_gen.sh``` for semi-supervised disease diagnosis using the augmented unlabeled data.
    
 
 |Method|Colonoscopic |CholeTriplet |
@@ -287,8 +290,9 @@ python metrics.py --model_path output/endonerf/pulling
 ``` -->
 
 ## 🛒TODO List
-- [ ] The commands for training compared methods.
 - [X] Upload the ckpt for compared methods.
+- [ ] Clean up the codes for training compared methods.
+
 
 ## 🎈Acknowledgements
 Greatly appreciate the tremendous effort for the following projects!
