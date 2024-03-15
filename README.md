@@ -1,4 +1,4 @@
-# *Endora*: Video Generation Models as Endoscopy Simulators 
+# *Endora*: Video Generation Models as <p>Endoscopy Simulators 
 
 <p align="center">
   <img src="./assets/avatar.png" alt="" width="120" height="120">
