@@ -307,7 +307,6 @@ Greatly appreciate the tremendous effort for the following projects!
 ## 📜Citation
 If you find this work helpful for your project,please consider citing the following paper:
 ```
-
 @misc{li2024endora,
       title={Endora: Video Generation Models as Endoscopy Simulators}, 
       author={Chenxin Li and Hengyu Liu and Yifan Liu and Brandon Y. Feng, and Wuyang Li and Xinyu Liu, Zhen Chen and Jing shao and Yixuan Yuan},
@@ -316,7 +315,6 @@ If you find this work helpful for your project,please consider citing the follow
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
-
 @misc{liu2024endogaussian,
       title={EndoGaussian: Gaussian Splatting for Deformable Surgical Scene Reconstruction}, 
       author={Yifan Liu and Chenxin Li and Chen Yang and Yixuan Yuan},
