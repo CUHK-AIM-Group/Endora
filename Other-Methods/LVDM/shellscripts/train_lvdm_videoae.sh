@@ -2,13 +2,12 @@
 
 PROJ_ROOT="./log"                        # root directory for saving experiment logs
 EXPNAME="lvdm_videoae_cholec"          # experiment name 
-DATADIR="/mnt/zhen_chen/Dora/data/CholecT45_frames"    # dataset directory
-
+DATADIR="/data/CholecT45_frames"    # dataset directory
 CONFIG="configs/videoae/cholec.yaml"
 
 # run
 export TOKENIZERS_PARALLELISM=false
-CUDA_VISIBLE_DEVICES=7 python main.py \
+CUDA_VISIBLE_DEVICES=0 python main.py \
 --base $CONFIG \
 -t --gpus 0, \
 --name $EXPNAME \
