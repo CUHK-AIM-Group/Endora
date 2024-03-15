@@ -316,5 +316,13 @@ If you find this work helpful for your project,please consider citing the follow
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
+
+@misc{liu2024endogaussian,
+      title={EndoGaussian: Gaussian Splatting for Deformable Surgical Scene Reconstruction}, 
+      author={Yifan Liu and Chenxin Li and Chen Yang and Yixuan Yuan},
+      year={2024},
+      eprint={2401.12561},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
