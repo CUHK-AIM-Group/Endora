@@ -28,47 +28,6 @@
 
 </div>
 
-
-## 🍻 Results
-### ☝️ Text-to-Video Generation
-
-<table class="center">
-  <!-- <td style="text-align:center;" width="50">Input Text</td> -->
-  <td style="text-align:center;" width="170">"A corgi is swimming fastly"</td>
-  <td style="text-align:center;" width="170">"astronaut riding a horse"</td>
-  <td style="text-align:center;" width="170">"A glass bead falling into water with a huge splash. Sunset in the background"</td>
-  <td style="text-align:center;" width="170">"A beautiful sunrise on mars. High definition, timelapse, dramaticcolors."</td>
-  <td style="text-align:center;" width="170">"A bear dancing and jumping to upbeat music, moving his whole body."</td>
-  <td style="text-align:center;" width="170">"An iron man surfing in the sea. cartoon style"</td>
-  <tr>
-  <td><img src=assets/t2v-001.gif width="170"></td>
-  <td><img src=assets/t2v-002.gif width="170"></td>
-  <td><img src=assets/t2v-003.gif width="170"></td>
-  <td><img src=assets/t2v-007.gif width="170"></td>
-  <td><img src=assets/t2v-005.gif width="170"></td>
-  <td><img src=assets/t2v-004.gif width="170"></td>
-</tr>
-</table >
-
-### ✌️ Unconditional Long Video Generation (40 seconds)
-<table class="center">
-  <td><img src=assets/sky-long-001.gif width="170"></td>
-  <td><img src=assets/sky-long-002.gif width="170"></td>
-  <td><img src=assets/sky-long-003.gif width="170"></td>
-  <td><img src=assets/ucf-long-001.gif width="170"></td>
-  <td><img src=assets/ucf-long-002.gif width="170"></td>
-  <td><img src=assets/ucf-long-003.gif width="170"></td>
-  <tr>
-</tr>
-</table >
-
-## ⏳ TODO
-- [x] Release pretrained text-to-video generation models and inference code
-- [x] Release unconditional video generation models
-- [x] Release training code
-- [ ] Update training and sampling for long video generation
-<br>
-
 ---
 ## ⚙️ Setup
 
