@@ -20,13 +20,13 @@
 -------------------------------------------
 ![introduction](assets/teaser.png)
 
-## Key Features
+## 💡Key Features
 - A high-fidelity **medical video generation** framework, tested on endoscopy scenes, laying the groundwork for further advancements in the field.
 - The first public **benchmark for endoscopy video generation**, featuring a comprehensive collection of clinical videos and adapting existing general-purpose generative video models for this purpose.
 - A novel technique to infuse generative models with **features distilled from a 2D visual foundation model**, ensuring consistency and quality across different scales.
 - **Versatile ability through successful applications** in video-based disease diagnosis and 3D surgical scene reconstruction, highlighting its potential for downstream medical tasks
 
-## Setup
+## 🛠Setup
 
 ```bash
 git clone https://github.com/XGGNet/Endora.git
@@ -43,7 +43,7 @@ Tips A: We test the framework using pytorch=2.1.2, and the CUDA compile version=
 
 Tips B: GPU with 24GB (or more) is recommanded for video sampling by Endora inference, and 48GB (or more) for Endora training. 
 
-## Data Preparation
+## 📚Data Preparation
 **Colonoscopic**:  The dataset provided by [paper](https://ieeexplore.ieee.org/abstract/document/7442848) can be found [here](http://www.depeca.uah.es/colonoscopy_dataset/). You can directly use the [processed video data](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/ES_hCHb2XWFJgsK4hrKUnNUBx3fl6QI3yyk9ImP4AkkRVw?e=LC4DU5) by *[Endo-FM](https://github.com/openmedlab/Endo-FM)* without further data processing.
 <!-- The dataset provided in [Colonoscopic](https://arxiv.org/abs/2206.15255) is used. You can download and process the dataset from their website (https://github.com/med-air/EndoNeRF). We use the two accessible clips including 'pulling_soft_tissues' and 'cutting_tissues_twice'. -->
 
@@ -96,7 +96,7 @@ The resulted file structure is as follows.
 
 
 
-## Sampling Endoscopy Videos
+## 🎇Sampling Endoscopy Videos
 
 You can directly sample the endoscopy videos from the checkpoint model. Here is an example for quick usage for using our **pre-trained models**:
 1. Download the pre-trained weights from [here](https://stuxmueducn-my.sharepoint.com/:f:/g/personal/chenxinli_stu_xmu_edu_cn/EnlDBG3dzwlPnSjqYdpp4l8BfettnJoeX1XVSX_BIVNyHQ?e=W6kXM9) and put them to specific path defined in the configs.
@@ -126,7 +126,7 @@ bash sample/ffs_ddp.sh
 <!-- If you want to try generating videos from text, please download [`t2v_required_models`](https://huggingface.co/maxin-cn/Latte/tree/main/t2v_required_models) and run `bash sample/t2v.sh`. -->
 
 
-## Training Endora
+## ⏳Training Endora
 The weight of pretrained DINO can be found [here](https://github.com/facebookresearch/dino), and in our implementation we use ViT-B/8 during training Endora. And the saved path need to be edited in [`./configs`](./configs/)
 
 Train Endora with the resolution of 128x128 with `N` GPUs on the Colonoscopic dataset
@@ -173,7 +173,7 @@ python train.py -s data/endonerf/pulling --port 6017 --expname endonerf/pulling 
 You can customize your training config through the config files.
  -->
 
-## Metric Evaluation
+## 📏Metric Evaluation
 We first split the generated videos to frames and use the code from [StyleGAN](https://github.com/universome/stylegan-v) to evaluate the model in terms of FVD, FID and IS.  
 
 Test with [`process_data.py`](./process_data.py) and code in [stylegan-v](https://github.com/universome/stylegan-v)
@@ -188,7 +188,7 @@ Test with scipt [`test.sh`](./test.sh)
 ```bash
 bash test.sh
 ```
-## Running Compared Methods Re-implemented on Endoscopy
+## ⏳Running Compared Methods Re-implemented on Endoscopy
 We provide the training of other methods on endoscopy video generation (as shown in Table 1. Quantitative Comparison in paper)
 ```bash
 torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %StyleGAN-V
@@ -226,7 +226,7 @@ Here is an overview of performance&checkpoints&logs on Colonoscopic Dataset.
 
 
 
-## Ablation on Endora's Variants
+## ⏳Ablation on Endora's Variants
 We also provide the training of other variants of Endora (as shown in Table 3. Ablation Studies in paper). Training and Sampling Scripts are in [`train_scripts/ablation`](./train_scripts/ablation) and [`sample/ablation`](./sample/ablation) respectively.
 ```bash
 bash /train_scripts/ablation/train_col_ablationi.sh
@@ -242,7 +242,7 @@ bash /sample/ablation/col_ddp_ablationi.sh
 
 
 
-## Downstream Application
+## ⏳Downstream Application
 We provide the reproduction steps for reproducing the results of extending Endora to downstream applications (as shown in Section 3.3 in paper).
 ### Case I. Temporal-consistent Data Augmentation
 Please follow the steps:
@@ -286,11 +286,11 @@ You can just run the following script to evaluate the model.
 python metrics.py --model_path output/endonerf/pulling
 ``` -->
 
-## TODO List
+## 🛒TODO List
 - [ ] The commands for training compared methods.
 - [ ] Upload the ckpt for compared methods.
 
-## Acknowledgements
+## 🎈Acknowledgements
 Greatly appreciate the tremendous effort for the following projects!
 - [Endo-FM](https://github.com/openmedlab/Endo-FM)
 - [Latte](https://github.com/Vchitect/Latte)
@@ -300,7 +300,7 @@ Greatly appreciate the tremendous effort for the following projects!
 
 <!-- Some source code of ours is borrowed from [3DGS](https://github.com/graphdeco-inria/gaussian-splatting), [4DGS](https://github.com/hustvl/4DGaussians), and [EndoNeRF](https://github.com/med-air/EndoNeRF). Thanks for their contributions.  -->
 
-## Citation
+## 📜Citation
 If you find this work helpful for your project,please consider citing the following paper:
 ```
 @misc{
