@@ -1,4 +1,4 @@
-CUDA_VISIBLE_DEVICES=7 python src/scripts/generate.py \
+CUDA_VISIBLE_DEVICES=0 python src/scripts/generate.py \
 --network_pkl /mnt/zhen_chen/Dora/MoStGAN-V/experiments/col_128_col_128/experiments/col_128_col_128/output/network-snapshot-005120.pkl \
 --num_videos 3125 \
 --as_grids false \

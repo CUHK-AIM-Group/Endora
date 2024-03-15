@@ -28,7 +28,8 @@
 </div>
 
 
-This is the repo modified from https://github.com/YingqingHe/LVDM for training, sampling and evaluation for the endoscopy scenario.
+This repo is modified from https://github.com/YingqingHe/LVDM for training, sampling and evaluation for the endoscopy scenario.
+
 ---
 ## ⚙️ Setup
 
