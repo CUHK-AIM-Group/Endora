@@ -39,9 +39,9 @@ pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https
 pip install -r requirements.txt
 ```
 
-Tips A: We test the framework using pytorch=2.1.2, and the CUDA compile version=11.8. Other versions should be fine most of the time but not ensured.
+**Tips A**: We test the framework using pytorch=2.1.2, and the CUDA compile version=11.8. Other versions should be also fine but not totally ensured.
 
-Tips B: GPU with 24GB (or more) is recommanded for video sampling by Endora inference, and 48GB (or more) for Endora training. 
+**Tips B**: GPU with 24GB (or more) is recommended for video sampling by <i>Endora</i> inference, and 48GB (or more) for <i>Endora</i> training. 
 
 ## Data Preparation
 **Colonoscopic**:  The dataset provided by [paper](https://ieeexplore.ieee.org/abstract/document/7442848) can be found [here](http://www.depeca.uah.es/colonoscopy_dataset/). You can directly use the [processed video data](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/ES_hCHb2XWFJgsK4hrKUnNUBx3fl6QI3yyk9ImP4AkkRVw?e=LC4DU5) by *[Endo-FM](https://github.com/openmedlab/Endo-FM)* without further data processing.
@@ -55,7 +55,7 @@ Tips B: GPU with 24GB (or more) is recommanded for video sampling by Endora infe
 <!-- The dataset provided in [CholecTriplet](https://endovissub2019-scared.grand-challenge.org/) is used. To obtain a link to the data and code release, sign the challenge rules and email them to max.allan@intusurg.com. You will receive a temporary link to download the data and code. -->
 <!-- Follow [MICCAI_challenge_preprocess](https://github.com/EikoLoki/MICCAI_challenge_preprocess) to extract data.  -->
 
-Run [`process_data.py`](process_data.py) and [`process_list.py`](process_list.py) to get the splited frames and the corresponding list for modified diffusion.
+Please run [`process_data.py`](process_data.py) and [`process_list.py`](process_list.py) to get the split frames and the corresponding list at first.
 ```bash
 CUDA_VISIBLE_DEVICES=gpu_id python process_data.py -s /path/to/datasets -t /path/to/save/video/frames
 
@@ -229,9 +229,8 @@ Here is an overview of performance&checkpoints&logs on Colonoscopic Dataset.
 ## Ablation on Endora's Variants
 We also provide the training of other variants of Endora (as shown in Table 3. Ablation Studies in paper). Training and Sampling Scripts are in [`train_scripts/ablation`](./train_scripts/ablation) and [`sample/ablation`](./sample/ablation) respectively.
 ```bash
-bash /train_scripts/ablation/train_col_ablationi.sh
-
-bash /sample/ablation/col_ddp_ablationi.sh
+bash /train_scripts/ablation/train_col_ablation{i}.sh  % e.g., i=1 to run the 1st-row ablation experiments. 
+bash /sample/ablation/col_ddp_ablation{i}.sh  % e.g., i=1 to run the 1st-row ablation experiments. 
 ```
 |Modified Diffusion| Spatiotemporal Encoding | Prior Guidance | FVD↓ | FID↓ | IS↑ | Checkpoints 
 |-----|------|-----|-----|-----|-----|------|
