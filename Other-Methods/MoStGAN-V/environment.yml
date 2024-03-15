@@ -1,0 +1,20 @@
+name: mostgan
+channels:
+  - pytorch
+  - nvidia
+  - defaults
+dependencies:
+  - ninja=1.10.2
+  - python=3.9
+  - pytorch=1.9.1
+  - cudatoolkit=11.3
+  - torchvision==0.10.1
+  - pip:
+    - gitpython
+    - gpustat
+    - hydra-core==1.0.7
+    - moviepy==1.0.3
+    - opencv-python==4.6.0.66
+    - protobuf==3.19.4
+    - tqdm
+    

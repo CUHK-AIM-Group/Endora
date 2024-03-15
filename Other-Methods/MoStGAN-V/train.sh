@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python -m src.infra.launch hydra.run.dir=. exp_suffix=cholec_128 env=local dataset=cholec dataset.resolution=128 num_gpus=1

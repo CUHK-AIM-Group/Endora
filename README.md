@@ -205,10 +205,10 @@ torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train
 
 The pre-trained weights for all the comparison methods are avaliable [here](TBD).
 
-Here is an overview of performance&checkpoints&logs on Colonoscopic Dataset.
+Here is an overview of performance&checkpoints on Colonoscopic Dataset.
 |Method| FVD↓ | FID↓ | IS↑ | Checkpoints |
 |-----|------|-----|-----|-----|
-|StyleGAN-V| 2110.7 | 226.14 | 2.12| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|
+|StyleGAN-V| 2110.7 | 226.14 | 2.12| [Link](https://stuxmueducn-my.sharepoint.com/:f:/g/personal/chenxinli_stu_xmu_edu_cn/Enw7y_TPHZNEt4UvRGStL3cBhXwe2Xo190XXDBDil5ZHkw?e=LZk0rV)|
 |LVDM| 1036.7 | 96.85 | 1.93| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|
 |MoStGAN-V| 468.5 | 53.17 | 3.37| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
 |Endora (Ours)| 460.7 | 13.41 | 3.90| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|[Link](https://drive.google.com/file/d/1VUndAotIgBVrd9MguFwuw3vZh-rRm0Mj/view?usp=sharing)|
@@ -234,10 +234,10 @@ bash /sample/ablation/col_ddp_ablation{i}.sh  % e.g., i=1 to run the 1st-row abl
 ```
 |Modified Diffusion| Spatiotemporal Encoding | Prior Guidance | FVD↓ | FID↓ | IS↑ | Checkpoints 
 |-----|------|-----|-----|-----|-----|------|
-|<span style="color: red;">&#10060;</span>| <span style="color: red;">&#10060;</span> | <span style="color: red;">&#10060;</span> | 2110.7 | 226.14 | 2.12| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|
- |&#x2705;|<span style="color: red;">&#10060;</span> | <span style="color: red;">&#10060;</span>|1036.7 | 96.85 | 1.93| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|
-|&#x2705;|&#x2705;| <span style="color: red;">&#10060;</span> | 468.5 | 53.17 | 3.37| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|
-|&#x2705;|&#x2705;| &#x2705;| 468.5 | 53.17 | 3.37| [Link](https://drive.google.com/file/d/1b8qU5lTP62Jr_YtEcj2lsJAWkVFZWDWL/view?usp=sharing)|
+|<span style="color: red;">&#10060;</span>| <span style="color: red;">&#10060;</span> | <span style="color: red;">&#10060;</span> | 2110.7 | 226.14 | 2.12| [Link](https://stuxmueducn-my.sharepoint.com/:u:/g/personal/chenxinli_stu_xmu_edu_cn/EdVg_dgCizxNuQQ0ABzy1HgBU91vT-oJjtwuDBaAMv5XgQ?e=LSuZiy)|
+ |&#x2705;|<span style="color: red;">&#10060;</span> | <span style="color: red;">&#10060;</span>|1036.7 | 96.85 | 1.93| [Link](https://stuxmueducn-my.sharepoint.com/:u:/g/personal/chenxinli_stu_xmu_edu_cn/ESZvweBhKvRNnn0Ci8d331YB7BDJ4fHQSIFW7WDYial-tw?e=Rh0LlF)|
+|&#x2705;|&#x2705;| <span style="color: red;">&#10060;</span> | 468.5 | 53.17 | 3.37| [Link](https://stuxmueducn-my.sharepoint.com/:u:/g/personal/chenxinli_stu_xmu_edu_cn/ET6q0C6b1PxFmINnqWmZFk0BVjGxb5oHHitC2lGOeokO5g?e=jE5rw8)|
+|&#x2705;|&#x2705;| &#x2705;| 468.5 | 53.17 | 3.37| [Link](https://stuxmueducn-my.sharepoint.com/:u:/g/personal/chenxinli_stu_xmu_edu_cn/EfXBvHIfM6JOh3jPTI63orgBQeEoHH8-wJG1HTy0YgqQ-g?e=c5N6qa)|
 
 
 
@@ -245,9 +245,10 @@ bash /sample/ablation/col_ddp_ablation{i}.sh  % e.g., i=1 to run the 1st-row abl
 We provide the reproduction steps for reproducing the results of extending Endora to downstream applications (as shown in Section 3.3 in paper).
 ### Case I. Temporal-consistent Data Augmentation
 Please follow the steps:
-1. Download **PolypDiag** dataset provided by [paper](TBD) from [here](TBD). You can directly use the [processed video data]() by *[Endo-FM](TBD)* without further data processing.
+1. Enter the path "Downstream-Semi/"
+1. Download **PolypDiag** dataset provided by [paper](https://link.springer.com/chapter/10.1007/978-3-031-16437-8_9) from [here](https://github.com/tianyu0207/weakly-polyp). You can directly use the [processed video data](https://mycuhk-my.sharepoint.com/personal/1155167044_link_cuhk_edu_hk/_layouts/15/onedrive.aspx?id=%2Fpersonal%2F1155167044%5Flink%5Fcuhk%5Fedu%5Fhk%2FDocuments%2FEndo%2DFM%2Fdata%2Fdownstream%2FPolypDiag%2Etar&parent=%2Fpersonal%2F1155167044%5Flink%5Fcuhk%5Fedu%5Fhk%2FDocuments%2FEndo%2DFM%2Fdata%2Fdownstream&ga=1) by [Endo-FM](https://github.com/med-air/Endo-FM) without further data processing.
 2. Run the script ```python semi_fixmatch.py``` to obtain the Supervised-only lowerbound of semi-supervised disease diagnosis.
-3. Sample the endoscopy videos on **Colonoscopic** and **CholecTriplet** as augmented data. We also provide the sampled videos [here](TBD) for direct usage.
+3. Sample the endoscopy videos on **Colonoscopic** and **CholecTriplet** as augmented data. We also provide the sampled videos [here]() for direct usage.
 4. Run the script ```python semi_fixmatch.py``` for semi-supervised disease diagnosis using the augmented unlabeled data.
    
 
@@ -287,7 +288,7 @@ python metrics.py --model_path output/endonerf/pulling
 
 ## TODO List
 - [ ] The commands for training compared methods.
-- [ ] Upload the ckpt for compared methods.
+- [X] Upload the ckpt for compared methods.
 
 ## Acknowledgements
 Greatly appreciate the tremendous effort for the following projects!
