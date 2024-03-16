@@ -246,7 +246,7 @@ bash /sample/ablation/col_ddp_ablation{i}.sh  % e.g., i=1 to run the 1st-row abl
 
 
 
-## ⏳Downstream Application
+## 🎪Downstream Application
 We provide the reproduction steps for reproducing the results of extending Endora to downstream applications (as shown in Section 3.3 in paper).
 ### Case I. Temporal-consistent Data Augmentation
 Please follow the steps:
