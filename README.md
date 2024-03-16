@@ -192,7 +192,7 @@ bash test.sh
 ```
 ## 🧰Running Compared Methods Re-implemented on Endoscopy
 We provide the code of training and testing scripts of compared methods on endoscopy video generation (as shown in Table 1. Quantitative Comparison in paper).
-Please enter [Other-Methods/](https://github.com/XGGNet/Endora/tree/main/Other-Methods) for more details. We will keep cleaning up the code.
+Please enter [`Other-Methods/`](https://github.com/XGGNet/Endora/tree/main/Other-Methods) for more details. We will keep cleaning up the code.
 
 <!-- 
 ```bash
