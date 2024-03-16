@@ -190,7 +190,7 @@ Test with scipt [`test.sh`](./test.sh)
 ```bash
 bash test.sh
 ```
-## ⏳Running Compared Methods Re-implemented on Endoscopy
+## 🧰Running Compared Methods Re-implemented on Endoscopy
 We provide the code of training and testing scripts of compared methods on endoscopy video generation (as shown in Table 1. Quantitative Comparison in paper).
 Please enter [Other-Methods/](https://github.com/XGGNet/Endora/tree/main/Other-Methods) for more details. We will keep cleaning up the code.
 
@@ -231,7 +231,7 @@ Here is an overview of performance&checkpoints on Colonoscopic Dataset.
 
 
 
-## ⏳Ablation on Endora's Variants
+## ✒Ablation on Endora's Variants
 We also provide the training of other variants of Endora (as shown in Table 3. Ablation Studies in paper). Training and Sampling Scripts are in [`train_scripts/ablation`](./train_scripts/ablation) and [`sample/ablation`](./sample/ablation) respectively.
 ```bash
 bash /train_scripts/ablation/train_col_ablation{i}.sh  % e.g., i=1 to run the 1st-row ablation experiments. 
