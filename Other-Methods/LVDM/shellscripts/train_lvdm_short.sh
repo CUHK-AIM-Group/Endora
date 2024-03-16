@@ -1,13 +1,13 @@
 
 PROJ_ROOT="./log"                      # root directory for saving experiment logs
 EXPNAME="lvdm_short_cholec"          # experiment name 
-DATADIR="/mnt/zhen_chen/Dora/data/CholecT45_frames"  # dataset directory
-AEPATH="/mnt/zhen_chen/Dora/LVDM/log/lvdm_videoae_cholec/checkpoints/last.ckpt"    # pretrained video autoencoder checkpoint
-CONFIG="/mnt/zhen_chen/Dora/LVDM/configs/lvdm_short/cholec.yaml"
+DATADIR="/data/CholecT45_frames"  # dataset directory
+AEPATH="LVDM/log/lvdm_videoae_cholec/checkpoints/last.ckpt"    # pretrained video autoencoder checkpoint
+CONFIG="LVDM/configs/lvdm_short/cholec.yaml"
 
 # run
 export TOKENIZERS_PARALLELISM=false
-CUDA_VISIBLE_DEVICES=6ls python main.py \
+CUDA_VISIBLE_DEVICES=0 ls python main.py \
 --base $CONFIG \
 -t --gpus 0, \
 --name $EXPNAME \

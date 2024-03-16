@@ -25,49 +25,10 @@
 2️⃣ unconditionally generate videos with thousands of frames.
 
 <br>
-
 </div>
 
 
-## 🍻 Results
-### ☝️ Text-to-Video Generation
-
-<table class="center">
-  <!-- <td style="text-align:center;" width="50">Input Text</td> -->
-  <td style="text-align:center;" width="170">"A corgi is swimming fastly"</td>
-  <td style="text-align:center;" width="170">"astronaut riding a horse"</td>
-  <td style="text-align:center;" width="170">"A glass bead falling into water with a huge splash. Sunset in the background"</td>
-  <td style="text-align:center;" width="170">"A beautiful sunrise on mars. High definition, timelapse, dramaticcolors."</td>
-  <td style="text-align:center;" width="170">"A bear dancing and jumping to upbeat music, moving his whole body."</td>
-  <td style="text-align:center;" width="170">"An iron man surfing in the sea. cartoon style"</td>
-  <tr>
-  <td><img src=assets/t2v-001.gif width="170"></td>
-  <td><img src=assets/t2v-002.gif width="170"></td>
-  <td><img src=assets/t2v-003.gif width="170"></td>
-  <td><img src=assets/t2v-007.gif width="170"></td>
-  <td><img src=assets/t2v-005.gif width="170"></td>
-  <td><img src=assets/t2v-004.gif width="170"></td>
-</tr>
-</table >
-
-### ✌️ Unconditional Long Video Generation (40 seconds)
-<table class="center">
-  <td><img src=assets/sky-long-001.gif width="170"></td>
-  <td><img src=assets/sky-long-002.gif width="170"></td>
-  <td><img src=assets/sky-long-003.gif width="170"></td>
-  <td><img src=assets/ucf-long-001.gif width="170"></td>
-  <td><img src=assets/ucf-long-002.gif width="170"></td>
-  <td><img src=assets/ucf-long-003.gif width="170"></td>
-  <tr>
-</tr>
-</table >
-
-## ⏳ TODO
-- [x] Release pretrained text-to-video generation models and inference code
-- [x] Release unconditional video generation models
-- [x] Release training code
-- [ ] Update training and sampling for long video generation
-<br>
+This repo is modified from https://github.com/YingqingHe/LVDM for training, sampling and evaluation for the endoscopy scenario.
 
 ---
 ## ⚙️ Setup
@@ -78,81 +39,33 @@ conda create -n lvdm python=3.8.5
 conda activate lvdm
 pip install -r requirements.txt
 ```
-### Pretrained Models and Used Datasets
 
-<!-- <div style="text-indent:25px"> -->
-<!-- <details><summary></summary> -->
-Download via linux commands:
-```
-mkdir -p models/ae
-mkdir -p models/lvdm_short
-mkdir -p models/t2v
-
-# sky timelapse
-wget -O models/ae/ae_sky.ckpt https://huggingface.co/Yingqing/LVDM/resolve/main/ae/ae_sky.ckpt
-wget -O models/lvdm_short/short_sky.ckpt https://huggingface.co/Yingqing/LVDM/resolve/main/lvdm_short/short_sky.ckpt  
-
-# taichi
-wget -O models/ae/ae_taichi.ckpt https://huggingface.co/Yingqing/LVDM/resolve/main/ae/ae_taichi.ckpt
-wget -O models/lvdm_short/short_taichi.ckpt https://huggingface.co/Yingqing/LVDM/resolve/main/lvdm_short/short_taichi.ckpt
-
-# text2video
-wget -O models/t2v/model.ckpt https://huggingface.co/Yingqing/LVDM/resolve/main/lvdm_short/t2v.ckpt
-```
-<!-- </details>
-</div> -->
-<!-- - UCF-101: [dataset](https://www.crcv.ucf.edu/data/UCF101.php) -->
-<!-- [samples_short](TBD), [samples_long](TBD) -->
-
-Download manually:
-- Sky Timelapse: [VideoAE](https://huggingface.co/Yingqing/LVDM/blob/main/ae/ae_sky.ckpt), [LVDM_short](https://huggingface.co/Yingqing/LVDM/blob/main/lvdm_short/short_sky.ckpt), [LVDM_pred](TBD), [LVDM_interp](TBD), [dataset](https://github.com/weixiong-ur/mdgan)
-- Taichi: [VideoAE](https://huggingface.co/Yingqing/LVDM/blob/main/ae/ae_taichi.ckpt), [LVDM_short](https://huggingface.co/Yingqing/LVDM/blob/main/lvdm_short/short_taichi.ckpt), [dataset](https://github.com/AliaksandrSiarohin/first-order-model/blob/master/data/taichi-loading/README.md)
-- Text2Video: [model](https://huggingface.co/Yingqing/LVDM/blob/main/lvdm_short/t2v.ckpt)
-
----
-## 💫 Inference 
-### Sample Short Videos 
-- unconditional generation
-
-```
-bash shellscripts/sample_lvdm_short.sh
-```
-- text to video generation
-```
-bash shellscripts/sample_lvdm_text2video.sh
-```
-
-### Sample Long Videos 
-```
-bash shellscripts/sample_lvdm_long.sh
-```
-
----
 ## 💫 Training
 <!-- tar -zxvf dataset/sky_timelapse.tar.gz -C /dataset/sky_timelapse -->
 ### Train video autoencoder
 ```
 bash shellscripts/train_lvdm_videoae.sh 
 ```
-- remember to set `PROJ_ROOT`, `EXPNAME`, `DATADIR`, and `CONFIG`.
+- remember to set `PROJ_ROOT`, `EXPNAME`, `DATADIR`, and `CONFIG` to the endoscopy datasets (col, kvasir, and cholec).
 
 ### Train unconditional lvdm for short video generation
 ```
 bash shellscripts/train_lvdm_short.sh
 ```
-- remember to set `PROJ_ROOT`, `EXPNAME`, `DATADIR`, `AEPATH` and `CONFIG`.
+- remember to set `PROJ_ROOT`, `EXPNAME`, `DATADIR`, `AEPATH` and `CONFIG` to the endoscopy datasets (col, kvasir, and cholec).
 
-### Train unconditional lvdm for long video generation
+---
+## 💫 Inference 
+- unconditional generation
+
 ```
-# TBD
+bash shellscripts/sample_lvdm_short.sh
 ```
 
 ---
 ## 💫 Evaluation
-```
-bash shellscripts/eval_lvdm_short.sh
-```
-- remember to set `DATACONFIG`, `FAKEPATH`, `REALPATH`, and `RESDIR`.
+Please first generate the same number of videos as Endora and then use the same script used to evaluate the Endora.
+
 ---
 
 ## 📃 Abstract
