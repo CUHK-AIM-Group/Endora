@@ -239,10 +239,10 @@ bash /sample/ablation/col_ddp_ablation{i}.sh  % e.g., i=1 to run the 1st-row abl
 ```
 |Modified Diffusion| Spatiotemporal Encoding | Prior Guidance | FVD↓ | FID↓ | IS↑ | Checkpoints 
 |-----|------|-----|-----|-----|-----|------|
-|<span style="color: red;">&#10060;</span>| <span style="color: red;">&#10060;</span> | <span style="color: red;">&#10060;</span> | 2110.7 | 226.14 | 2.12| [Link](https://stuxmueducn-my.sharepoint.com/:u:/g/personal/chenxinli_stu_xmu_edu_cn/EdVg_dgCizxNuQQ0ABzy1HgBU91vT-oJjtwuDBaAMv5XgQ?e=LSuZiy)|
- |&#x2705;|<span style="color: red;">&#10060;</span> | <span style="color: red;">&#10060;</span>|1036.7 | 96.85 | 1.93| [Link](https://stuxmueducn-my.sharepoint.com/:u:/g/personal/chenxinli_stu_xmu_edu_cn/ESZvweBhKvRNnn0Ci8d331YB7BDJ4fHQSIFW7WDYial-tw?e=Rh0LlF)|
-|&#x2705;|&#x2705;| <span style="color: red;">&#10060;</span> | 468.5 | 53.17 | 3.37| [Link](https://stuxmueducn-my.sharepoint.com/:u:/g/personal/chenxinli_stu_xmu_edu_cn/ET6q0C6b1PxFmINnqWmZFk0BVjGxb5oHHitC2lGOeokO5g?e=jE5rw8)|
-|&#x2705;|&#x2705;| &#x2705;| 468.5 | 53.17 | 3.37| [Link](https://stuxmueducn-my.sharepoint.com/:u:/g/personal/chenxinli_stu_xmu_edu_cn/EfXBvHIfM6JOh3jPTI63orgBQeEoHH8-wJG1HTy0YgqQ-g?e=c5N6qa)|
+|<span style="color: red;">&#10060;</span>| <span style="color: red;">&#10060;</span> | <span style="color: red;">&#10060;</span> |  611.9  | 22.44 | 3.61| [Link](https://stuxmueducn-my.sharepoint.com/:u:/g/personal/chenxinli_stu_xmu_edu_cn/EdVg_dgCizxNuQQ0ABzy1HgBU91vT-oJjtwuDBaAMv5XgQ?e=LSuZiy)|
+ |&#x2705;|<span style="color: red;">&#10060;</span> | <span style="color: red;">&#10060;</span>|593.7 | 17.75|  3.65| [Link](https://stuxmueducn-my.sharepoint.com/:u:/g/personal/chenxinli_stu_xmu_edu_cn/ESZvweBhKvRNnn0Ci8d331YB7BDJ4fHQSIFW7WDYial-tw?e=Rh0LlF)|
+|&#x2705;|&#x2705;| <span style="color: red;">&#10060;</span> |493.5 |13.88| 3.89| [Link](https://stuxmueducn-my.sharepoint.com/:u:/g/personal/chenxinli_stu_xmu_edu_cn/ET6q0C6b1PxFmINnqWmZFk0BVjGxb5oHHitC2lGOeokO5g?e=jE5rw8)|
+|&#x2705;|&#x2705;| &#x2705;| 460.7 | 13.41 |3.90| [Link](https://stuxmueducn-my.sharepoint.com/:u:/g/personal/chenxinli_stu_xmu_edu_cn/EfXBvHIfM6JOh3jPTI63orgBQeEoHH8-wJG1HTy0YgqQ-g?e=c5N6qa)|
 
 
 
