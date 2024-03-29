@@ -53,7 +53,7 @@ pip install -r requirements.txt
 <!-- The dataset provided in [Kvasir-Capsule](https://arxiv.org/abs/2206.15255) is used. You can download and process the dataset from their website (https://github.com/med-air/EndoNeRF). We use the two accessible clips including 'pulling_soft_tissues' and 'cutting_tissues_twice'. -->
 
 
-**CholecTriplet**:  The dataset provided by [paper](https://www.sciencedirect.com/science/article/pii/S1361841522000846) can be found [here](https://cholectriplet2021.grand-challenge.org/). You can directly use the [processed video data](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/EQhyk3_yz5pAtdpKVFU93S0BfPfTNpblPFXTHaW-BIjV-Q?e=9duP5z) by *[Endo-FM](https://github.com/openmedlab/Endo-FM)* without further data processing.
+**CholecTriplet**:  The dataset provided by [paper](https://www.sciencedirect.com/science/article/pii/S1361841522000846) can be found [here](https://cholectriplet2021.grand-challenge.org/). You can directly use the [processed video data](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/Ea6g5KpHaJNLvYFqoZpHeroBS801guoB16X18F4GfEG4pw?e=SWHoyQ) by *[Endo-FM](https://github.com/openmedlab/Endo-FM)* without further data processing.
 <!-- The dataset provided in [CholecTriplet](https://endovissub2019-scared.grand-challenge.org/) is used. To obtain a link to the data and code release, sign the challenge rules and email them to max.allan@intusurg.com. You will receive a temporary link to download the data and code. -->
 <!-- Follow [MICCAI_challenge_preprocess](https://github.com/EikoLoki/MICCAI_challenge_preprocess) to extract data.  -->
 
