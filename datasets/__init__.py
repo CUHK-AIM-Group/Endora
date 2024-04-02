@@ -18,38 +18,38 @@ def get_dataset(args):
             ])
         return Colonoscopic(args, transform=transform_col, temporal_sample=temporal_sample)
     elif args.dataset == 'col_img':
-        transform_ffs = transforms.Compose([
+        transform_col = transforms.Compose([
             video_transforms.ToTensorVideo(), # TCHW
             video_transforms.RandomHorizontalFlipVideo(),
             video_transforms.UCFCenterCropVideo(args.image_size),
             transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5], inplace=True)
         ])
-        return ColonoscopicImages(args, transform=transform_ffs, temporal_sample=temporal_sample)
+        return ColonoscopicImages(args, transform=transform_col, temporal_sample=temporal_sample)
     
     elif args.dataset == "kva":
-        transform_col = transforms.Compose([
+        transform_kva = transforms.Compose([
                     video_transforms.ToTensorVideo(),
                     video_transforms.CenterCropResizeVideo(args.image_size),
                     # video_transforms.RandomHorizontalFlipVideo(),
                     transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5], inplace=True)
             ])
-        return Kvasir_Capsule(args, transform=transform_col, temporal_sample=temporal_sample)
+        return Kvasir_Capsule(args, transform=transform_kva, temporal_sample=temporal_sample)
     elif args.dataset == 'kva_img':
-        transform_ffs = transforms.Compose([
+        transform_kva = transforms.Compose([
             video_transforms.ToTensorVideo(), # TCHW
             video_transforms.RandomHorizontalFlipVideo(),
             video_transforms.UCFCenterCropVideo(args.image_size),
             transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5], inplace=True)
         ])
-        return Kvasir_CapsuleImages(args, transform=transform_ffs, temporal_sample=temporal_sample)
+        return Kvasir_CapsuleImages(args, transform=transform_kva, temporal_sample=temporal_sample)
     elif args.dataset == 'cho_img':
-        transform_ffs = transforms.Compose([
+        transform_cho = transforms.Compose([
             video_transforms.ToTensorVideo(), # TCHW
             video_transforms.RandomHorizontalFlipVideo(),
             video_transforms.UCFCenterCropVideo(args.image_size),
             transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5], inplace=True)
         ])
-        return CholecT45Images(args, transform=transform_ffs, temporal_sample=temporal_sample)
+        return CholecT45Images(args, transform=transform_cho, temporal_sample=temporal_sample)
     
     else:
         raise NotImplementedError(args.dataset)
