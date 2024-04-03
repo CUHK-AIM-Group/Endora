@@ -61,7 +61,8 @@ def main(args):
     # a pre-trained model or load a custom EnDora checkpoint from train.py:
     ckpt_path = args.ckpt
     state_dict = find_model(ckpt_path)
-    model.load_state_dict(state_dict)
+    # model.load_state_dict(state_dict)
+    model.load_state_dict(state_dict, strict=False)
 
     model.eval()  # important!
     diffusion = create_diffusion(str(args.num_sampling_steps))
