@@ -1,0 +1,7 @@
+# @package _group_
+
+name: cholec_${dataset.resolution}
+path: /mnt/zhen_chen/Dora/data/CholecT45_frames/train
+resolution: 128
+fps: 25
+# c_dim: 101

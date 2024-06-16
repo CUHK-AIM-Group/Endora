@@ -1,0 +1,7 @@
+# @package _group_
+
+name: kvasir_${dataset.resolution}
+path: /mnt/zhen_chen/Dora/data/Kvasir-Capsule_frames/train
+resolution: 128
+fps: 25
+# c_dim: 101

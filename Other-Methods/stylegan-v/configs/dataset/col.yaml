@@ -1,0 +1,7 @@
+# @package _group_
+
+name: col_${dataset.resolution}
+path: /mnt/zhen_chen/Dora/data/Colonoscopic_frames/train
+resolution: 128
+fps: 25
+# c_dim: 101
