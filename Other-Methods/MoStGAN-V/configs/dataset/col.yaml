@@ -1,0 +1,6 @@
+# @package _group_
+path: /mnt/zhen_chen/Dora/data/Colonoscopic_frames/train
+path_for_slurm_job: ${env.datasets_dir}/${dataset.name}
+name: col_${dataset.resolution}
+fps: 16
+resolution: 128

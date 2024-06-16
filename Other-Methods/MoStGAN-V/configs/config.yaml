@@ -1,0 +1,15 @@
+defaults:
+  - model/base.yaml
+  - model: mostgan
+
+  # Import dataset common and overwrite it with the custom one
+  - dataset/base.yaml
+  - dataset: cholec
+
+  - sampling/base.yaml
+  - sampling: random
+
+  - env/base.yaml
+  - env: raven-local
+  - infra.yaml
+  - training/base.yaml

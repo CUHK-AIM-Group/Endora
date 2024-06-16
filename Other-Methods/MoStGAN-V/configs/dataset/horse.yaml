@@ -1,0 +1,6 @@
+# @package _group_
+path: /ibex/ai/home/shenx/video/data/${dataset.name}
+path_for_slurm_job: ${env.datasets_dir}/${dataset.name}
+name: horse_${dataset.resolution}
+resolution: 256
+fps: 30

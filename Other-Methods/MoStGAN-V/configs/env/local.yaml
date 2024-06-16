@@ -1,0 +1,4 @@
+# @package _group_
+
+python_bin: /mnt/zhen_chen/anaconda3/envs/mostgan/bin/python
+project_path: ${hydra:runtime.cwd}

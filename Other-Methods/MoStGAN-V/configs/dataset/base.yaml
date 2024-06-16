@@ -1,0 +1,17 @@
+# @package _group_
+
+path: /mnt/zhen_chen/Dora/data
+sampling: ${sampling}
+c_dim: 0
+max_num_frames: 300
+augpipe: bgc_noro
+metrics: ["fvd2048_16f", "fvd2048_128f"]
+motion_z_distance: 16
+
+# Default parameters
+fps: 25
+resolution: 256
+
+# When used with slurm, this will take the dataset from `path_for_slurm_job`
+# and will copy it into the `path` location
+path_for_slurm_job: ${env.datasets_dir}/${dataset.name}.zip
