@@ -1,4 +1,4 @@
-# *Endora*: Video Generation Models as <p>Endoscopy Simulators 
+# *Endora*: Video Generation Models as <p>Endoscopy Simulators (Accepted by MICCAI2024)
 
 <p align="center">
   <img src="./assets/avatar.png" alt="" width="120" height="120">
