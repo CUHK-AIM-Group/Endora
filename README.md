@@ -1,4 +1,4 @@
-# *Endora*: Video Generation Models as Endoscopy Simulators (MICCAI2024)
+# *Endora*: Video Generation Models as Endoscopy Simulators (MICCAI 2024)
 
 <p align="center">
   <img src="./assets/avatar.png" alt="" width="120" height="120">
