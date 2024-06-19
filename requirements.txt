@@ -12,3 +12,4 @@ imageio-ffmpeg
 omegaconf
 moviepy
 torchmetrics
+click
