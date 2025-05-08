@@ -213,7 +213,7 @@ The pre-trained weights for all the comparison methods are available [here](http
 Here is an overview of performance&checkpoints on Colonoscopic Dataset.
 |Method| FVD↓ | FID↓ | IS↑ | Checkpoints |
 |-----|------|-----|-----|-----|
-|StyleGAN-V| 2110.7 | 226.14 | 2.12| [Link](https://stuxmueducn-my.sharepoint.com/:f:/g/personal/chenxinli_stu_xmu_edu_cn/Enw7y_TPHZNEt4UvRGStL3cBhXwe2Xo190XXDBDil5ZHkw?e=LZk0rV)|
+|StyleGAN-V| 2110.7 | 226.14 | 2.12| [Link](https://1drv.ms/f/c/4ba61f71217230ec/EuwwciFxH6YggEtoIwAAAAABLnfmUNoKpSPGz3HAZciTkQ?e=Xu1i43)|
 |LVDM| 1036.7 | 96.85 | 1.93| [Link](https://stuxmueducn-my.sharepoint.com/:f:/g/personal/chenxinli_stu_xmu_edu_cn/EmfK-GdAzkhBoDLG_g1QhxABYr_7g31w0lEQB64xAfO15A?e=nnAEnL)|
 |MoStGAN-V| 468.5 | 53.17 | 3.37| [Link](https://stuxmueducn-my.sharepoint.com/:f:/g/personal/chenxinli_stu_xmu_edu_cn/EiMG8BetkKZNnJWKooCPj24BhZ8O-bG9Whrxb1MTtJDheQ?e=ciMagR)|
 |Endora (Ours)| 460.7 | 13.41 | 3.90| [Link](https://stuxmueducn-my.sharepoint.com/:u:/g/personal/chenxinli_stu_xmu_edu_cn/EWWmifN-qwVFsN8TBp0ePQ4BnOGIdRpdFItvlnlKWxQ0qg?e=vYzURY)|
