@@ -208,8 +208,8 @@ torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train
 torchrun --nnodes=1 --nproc_per_node=N train.py --config ./configs/ffs/ffs_train.yaml %MoStGAN-V
 ``` -->
 
-The pre-trained weights for all the comparison methods are available [here](https://stuxmueducn-my.sharepoint.com/:f:/g/personal/chenxinli_stu_xmu_edu_cn/EhoRsCt9tetAso44IFivC-EBcmt1UR_Zz0zmmwzI09tB9w?e=5QAuo6).
-
+The pre-trained weights for all the comparison methods are available at below.
+<!-- [here](https://stuxmueducn-my.sharepoint.com/:f:/g/personal/chenxinli_stu_xmu_edu_cn/EhoRsCt9tetAso44IFivC-EBcmt1UR_Zz0zmmwzI09tB9w?e=5QAuo6).-->
 Here is an overview of performance&checkpoints on Colonoscopic Dataset.
 |Method| FVD↓ | FID↓ | IS↑ | Checkpoints |
 |-----|------|-----|-----|-----|
